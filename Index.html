@@ -5,6 +5,7 @@
    <title>Ecoa | Alma de bosque </title>
    <link rel="icon" href="assets/Logoecoa.png" type="image/png">
   <link rel="stylesheet" href="style.css">
+  <button></button>
   </head>
   <body>
     <header class="header">
@@ -58,11 +59,60 @@
      <span class="price">$15.000</span>
     </div>
     <div class="product-card">
-      <img src="" alt="">
+      <img src="assets/libreta_de_bolsillo_A6.png" alt="Libreta de bolsillo">
+      <h3>Libreta de bolsillo</h3>
+      <p>Perfecta para anotar datos importantes</p>
+      <span class="price">$ 10.000</span>
+    </div>
+    <div class="product-card">
+      <img src="assets/sketchbook.png" alt="Sketchbook">
+      <h3>Sketchbook Eco</h3>
+      <p>Hojas gruesas especiales para dibujo y bocetos.</p>
+      <span class="price">$20.000</span>
     </div>
   </div>
-
 </section>
+<section id="personalizar" class="customizer">
+  <h2>Personaliza tu Ecoa</h2>
+  <p>Elige las caracteristicas de tu libreta y se te daria un valor aproximado</p>
+<form id="form-personalizar">
+  <div class="form-group">
+    <label for="tamaño">1. Elige el tamaño:</label>
+    <select name="tamaño" id="tamaño">
+      <option value="A6">A6-Bolsillo</option>
+      <option value="A5"select>A5- Estandar</option>
+      <option value="A4">A4 - Grande</option>
+    </select>
+  </div>
+<div class="form-group">
+  <label for="hojas">2. Tipo de hojas:</label>
+  <select name="hojas" id="hojas">
+    <option value="punteadas">punteadas (Bullet Journal)</option>
+    <option value="rayadas">Rayadas</option>
+    <option value="lisas">Lisas / Blancas</option>
+    <option value="cuadriculadas">Cuadriculadas</option>
+  </select>
+</div>
+<button type="button" id="btn-cotizar" class="btn-primary">Calcular precio</button>
+</form>
+<div id="resultado-cotizacion" class="cotizacion-box">
+  <p>Selecciona tus opciones para ver la vista previa y costo estimado.</p>
+</div>
+</section>
+<footer id="contacto" class="footer">
+  <div class="footer-content">
+    <h3>Ecoa - papeleria sostenible</h3>
+    <p>Bogota,Colombia</p>
+    <p>Escribenos al WhatsApp o Instragram para pedidos personalizados</p>
+<div class="socials">
+  <a href="#" target="_blank">Instagram</a>
+  <a href="#" target="_blank">WhatsApp</a>
+</div>
+  </div>
+  <div class="footer-botton"></div>
+  <p >&copy; 2026 Ecoa.Todos los derechos reservados.</p>
+</footer>
+
   <script src="script.js"></script>
 </body>
 </html>
