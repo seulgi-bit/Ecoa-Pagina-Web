@@ -14,10 +14,9 @@
         <span>Corazon de papel ,alma de bosque </span>
       </div>
       <nav id="navmenu" class="nav">
-        
           <a href="#inicio">Inicio</a>
           <a href="#nosotros">Sobre Ecoa</a>
-          <a href="#productos">catalogo</a>
+          <a href="#productos">Catalogo</a>
           <a href="#personalizar">Personalizar</a>
           <a href="#contacto">Contacto</a>
         </nav>
@@ -29,7 +28,6 @@
       <a href="#personalizar" class="btn-primary">Crea tu libreta</a>
     </div>
     </section>
-
 
   <section id="nosotros" class="features">
     <h2>¿Porque elegir Ecoa?</h2>
@@ -98,18 +96,32 @@
   <p>Selecciona tus opciones para ver la vista previa y costo estimado.</p>
 </div>
 </section>
-
-<footer id="contacto" class="footer">
-  <div class="footer-content">
-    <h3>Ecoa - papeleria sostenible</h3>
-    <p>Bogota,Colombia</p>
-    <p>Escribenos al WhatsApp o Instragram para pedidos personalizados</p>
-<div class="socials">
-  <a href="#" target="_blank">Instagram</a>
-  <a href="#" target="_blank">WhatsApp</a>
-</div>
+<section id="contacto" class="section">
+  <h2 class="titulo-seccion">Contactame</h2>
+  <div class="contacto-container">
+    <form id="formulario contacto" class="form-contacto" novalidate>
+      <div class="campo">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" placeholder="Escribe tu nombre">
+        <span class="mensaje-error" id="error-nombre"></span>
+      </div>
+      <div class="campo">
+       <label for="email">Correo electronico:</label>
+       <input type="email" id="email" placeholder="tucorreo@gmail.com">
+       <span class="mensaje-error" id="email-error"></span>
+      </div>
+      <div class="campo">
+        <label for="mensaje">Tu mensaje:</label>
+        <textarea  id="mensaje" rows="3" placeholder="En que te puedo ayudar?"></textarea>
+        <span class="mensaje-error" id="error-mensaje"></span>
+      </div>
+      <button type="submit" class="btn-enviar">Enviar mensaje</button>
+      <div id="mensajeExito" class="mensaje-exito"></div>
+    </form>
   </div>
-  <div class="footer-botton"></div>
+</section>
+
+<footer>
   <p >&copy; 2026 Ecoa.Todos los derechos reservados.</p>
 </footer>
   <script src="script.js"></script>
