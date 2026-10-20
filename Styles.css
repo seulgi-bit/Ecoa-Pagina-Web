@@ -1,0 +1,27 @@
+:root {
+  --color-primario: #7125d5;
+  --color-secundario: #99efd0;
+  --color-texto: #0c0926;
+  --color-accento: #a284fd;
+  --color-fondo: #ececd9e1;
+  --color-blanco: #f5f5f5;
+  --fuente-principal: "Plus Jakarta Sans", sans-serif;
+}
+
+body {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  background-color: var(--color-fondo);
+  position: relative;
+}
+
+.capa-morada {
+  background-color: var(--color-primario);
+  position: fixed;
+  z-index: 10;
+}
+
+.navmenu {
+  text-decoration: none;
+}
