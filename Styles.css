@@ -8,12 +8,11 @@
   --color-fondo: #e8e8d2e1;
   --color-blanco: #f5f5f5;
   --fuente-principal: "Plus Jakarta Sans", sans-serif;
-  --fuente-secundaria:"Playfair Display", serif;
+  --fuente-secundaria: "Playfair Display", serif;
 }
 
 html {
   scroll-behavior: smooth;
-  
 }
 
 
@@ -71,6 +70,7 @@ h1 {
   font-size: 1.2rem;
   word-spacing: normal;
 }
+
 #navmenu a:hover {
   color: var(--color-blanco);
   transition: color 0.3s ease;
@@ -79,23 +79,23 @@ h1 {
 .contenido {
   position: relative;
   margin-top: 9rem;
-  /* Ajusta este valor según la altura de tu encabezado */
   padding-left: 5%;
   padding-right: 2%;
-  /* Ajusta este valor según la altura de tu encabezado */
 }
+
 .saludo {
   font-size: 2.5rem;
   color: var(--color-primario);
   text-align: center;
   font-family: var(--fuente-principal);
   font-weight: bold;
- border: 2px solid var(--color-primario);
- background-color: var(--color-secundario);
+  border: 2px solid var(--color-primario);
+  background-color: var(--color-secundario);
   border-radius: 15px;
   padding: 10px;
   margin-bottom: 20px;
 }
+
 span {
   font-style: italic;
   font-size: larger;
@@ -104,15 +104,16 @@ span {
   color: #171411;
   text-align: center;
 }
-#inicio{
+
+#inicio {
   text-align: center;
 }
+
 h2 {
   color: #ad87ea;
   font-size: 2rem;
   text-align: center;
   font-weight: 1000;
-
 }
 
 .btn-primary {
@@ -120,19 +121,21 @@ h2 {
   background-color: var(--color-secundario);
   color: #6818b4;
   text-align: center;
-  width:150px;
+  width: 150px;
   border: 2px solid var(--color-secundario);
   padding: 10px 10px;
   border-radius: 19px;
   display: block;
   margin: 20px auto;
 }
+
 .btn-primary:hover {
   background-color: var(--color-primario);
   color: var(--color-blanco);
   cursor: pointer;
   border: 2px solid var(--color-primario);
 }
+
 h3 {
   color: var(--color-subtitulos);
   font-size: 1.5rem;
@@ -140,42 +143,49 @@ h3 {
   text-align: center;
   margin-top: 2rem;
 }
+
 .reciclado {
- border: 2px solid rgb(158, 213, 158);
- background-color: rgb(167, 219, 167);
- border-radius: 15px;
- padding: 10px;
+  border: 2px solid rgb(158, 213, 158);
+  background-color: rgb(167, 219, 167);
+  border-radius: 15px;
+  padding: 10px;
 }
+
 .reciclado:hover {
   background-color: rgb(212, 248, 212);
   color: rgb(123, 211, 35);
   cursor: pointer;
   border: 2px solid rgb(158, 213, 158);
 }
+
 .personalizados {
   border: 2px solid rgb(223, 209, 154);
   background-color: rgb(221, 205, 141);
   border-radius: 15px;
   padding: 10px;
 }
+
 .personalizados:hover {
   background-color: rgb(240, 232, 197);
   color: rgb(228, 197, 26);
   cursor: pointer;
   border: 2px solid rgb(223, 209, 154);
 }
+
 .hecho-con-amor {
   border: 2px solid #e79bc1;
-  background-color: #e79bc1 ;
+  background-color: #e79bc1;
   border-radius: 15px;
   padding: 10px;
 }
+
 .hecho-con-amor:hover {
   background-color: #ebc9da;
   color: rgb(233, 71, 98);
   cursor: pointer;
   border: 2px solid #e79bc1;
 }
+
 h4 {
   color: var(--color-subtitulos);
   font-size: 1.2rem;
@@ -184,6 +194,7 @@ h4 {
   margin-top: 1rem;
   font-weight: bolder;
 }
+
 img {
   max-width: 100%;
   height: auto;
@@ -191,7 +202,8 @@ img {
   margin: 0 auto;
   border-radius: 15px;
 }
-.price{
+
+.price {
   text-decoration: underline;
   display: block;
   text-align: center;
@@ -199,90 +211,155 @@ img {
   color: var(--color-primario);
   margin-top: 10px;
 }
+
 .price:hover {
   color: var(--color-accento);
   cursor: pointer;
 }
-#form-personalizar{
+
+#form-personalizar {
   border: 2px solid var(--color-secundario);
   background-color: var(--color-secundario);
   padding: 20px;
   border-radius: 15px;
+  max-width: 500px;
+  margin: 0 auto;
 }
-#btn-cotizar{
+
+.form-group {
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.form-group label {
+  font-weight: bold;
+  color: var(--color-primario);
+}
+
+.form-group select {
+  width: 100%;
+  padding: 10px 12px;
+  border: 1px solid var(--color-primario);
+  border-radius: 8px;
+  font-family: var(--fuente-secundaria);
+  box-sizing: border-box;
+  outline: none;
+}
+
+#btn-cotizar {
   text-decoration: none;
   background-color: var(--color-primario);
   color: var(--color-secundario);
   text-align: center;
-  width:150px;
+  width: 150px;
   border: 2px solid var(--color-primario);
   padding: 10px 10px;
   border-radius: 19px;
   display: block;
   margin: 20px auto;
 }
+
 #btn-cotizar:hover {
   background-color: var(--color-accento);
   color: var(--color-blanco);
   cursor: pointer;
   border: 2px solid var(--color-accento);
 }
-.titulo-seccion{
+
+.titulo-seccion {
   color: var(--color-primario);
-  font-family:var(--fuente-secundaria);
+  font-family: var(--fuente-secundaria);
 }
+
 #contacto {
   border: 2px solid var(--color-accento);
   background-color: var(--color-accento);
   padding: 20px;
-  color:var(--color-primario);
+  color: var(--color-primario);
   border-radius: 15px;
   text-align: center;
 }
-#contacto form{
+
+#contacto form {
   max-width: 450px;
   margin: 0 auto;
   text-align: left;
 }
-.campo{
+
+.campo {
   margin-bottom: 15px;
-  display:flex;
+  display: flex;
   flex-direction: column;
   gap: 5px;
 }
-.campo label{
+
+.campo label {
   font-weight: bold;
   color: var(--color-primario);
 }
+
 #contacto input,
- #contacto textarea{
-  width:100%;
+#contacto textarea {
+  width: 100%;
   padding: 10px 12px;
   border: 1px solid var(--color-primario);
   border-radius: 8px;
-  font-family:var(--fuente-secundaria);
-  box-sizing:border-box;
-  outline:none;
+  font-family: var(--fuente-secundaria);
+  box-sizing: border-box;
+  outline: none;
 }
-.btn-enviar{
+
+.btn-enviar {
   text-decoration: none;
   background-color: var(--color-primario);
   color: var(--color-secundario);
   text-align: center;
-  width:150px;
+  width: 150px;
   border: 2px solid var(--color-primario);
   padding: 10px 10px;
   border-radius: 19px;
   display: block;
   margin: 20px auto;
 }
-.btn-enviar:hover{
+
+.btn-enviar:hover {
   background-color: var(--color-secundario);
   color: var(--color-blanco);
   cursor: pointer;
   border: 2px solid var(--color-secundario);
 }
-/*coloca a la barra de scroll un color diferente y mas bonito//
-/*acomoda los recuadros de personalizar propio ecoa//
+
+footer,
+.footer {
+  background-color: var(--color-primario);
+  color: var(--color-blanco);
+  text-align: center;
+  padding: 30px 20px;
+  margin-top: 40px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.238);
+
+}
+
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-accento);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--color-secundario);
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-primario);
+}
+
 /*acomoda footer y cambia el color/
-/*
