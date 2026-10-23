@@ -194,7 +194,10 @@ h4 {
   margin-top: 1rem;
   font-weight: bolder;
 }
+.product-grid {
+  background-color:var(--color-accento);
 
+}
 img {
   max-width: 100%;
   height: auto;
@@ -362,4 +365,4 @@ footer,
   background-color: var(--color-primario);
 }
 
-/*acomoda footer y cambia el color/
+/*cambia la forma del catalogo*/

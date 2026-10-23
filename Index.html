@@ -1,16 +1,17 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Ecoa | Alma de bosque </title>
-   <link rel="icon" href="assets/Logoecoa.png" type="image/png">
+   <link rel="icon" href="assets/img/logoecoa.png" type="image/png">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
    <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="Styles.css">
+  <link rel="stylesheet" href="styles.css">
   </head>
   <body>
     <div class="capa-morada">
@@ -61,17 +62,18 @@
   <h2> Nuestras libretas</h2>
   <div class="product-grid">
     <div class="product-card">
-     <h4 >Libreta A5</h4>
-     <img src="assets/img/Libreta-A5.png"alt="Libreta tamaño A5">
-     <p>Ideal para diario, estudio o trabajo diario.</p>
-     <span class="price">$15.000</span>
-    </div>
-    <div class="product-card">
        <h4>Libreta de bolsillo</h4>
-       <img src="assets/img/libreta_de_bolsillo_A6.png" alt="Libreta de bolsillo">
+       <img src="assets/img/libretabolsillo_A6.png" alt="Libreta de bolsillo">
       <p>Perfecta para anotar datos importantes</p>
       <span class="price">$ 10.000</span>
     </div>
+    <div class="product-card">
+     <h4 >Libreta A5</h4>
+     <img src="assets/img/libreta-A5.png"alt="Libreta tamaño A5">
+     <p>Ideal para diario, estudio o trabajo diario.</p>
+     <span class="price">$15.000</span>
+    </div>
+    
     <div class="product-card">
       <h4>Sketchbook Eco</h4>
       <img src="assets/img/sketchbook.png" alt="Sketchbook">
@@ -99,6 +101,13 @@
     <option value="rayadas">Rayadas</option>
     <option value="lisas">Lisas / Blancas</option>
     <option value="cuadriculadas">Cuadriculadas</option>
+  </select>
+  <div class="form-group">
+  <label for="hojas">3. Tipo de encuadernacion:</label>
+  <select name="encuadernacion" id="encuadernacion">
+    <option value="cosido">Cosido</option>
+    <option value="argollado">Argollado</option>
+    <option value="grapado"> Grapado</option>
   </select>
 </div>
 <button type="button" id="btn-cotizar" class="btn-secundary">Calcular precio</button>
