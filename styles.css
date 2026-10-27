@@ -10,12 +10,33 @@
   --fuente-principal: "Plus Jakarta Sans", sans-serif;
   --fuente-secundaria: "Playfair Display", serif;
 }
-
+*{
+  margin:0;
+  padding: 0;
+  box-sizing: border-box;
+}
 html {
   scroll-behavior: smooth;
 }
-
-
+#inicio{
+  padding-top: 10rem; 
+}
+.titulo{
+  color:var(--color-accento);
+}
+.hero {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaecoa2.jpeg');
+color: #ffffff;
+  background-size: cover;       
+  background-position: center;  
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  min-height: 400px; 
+}
 body {
   margin: 0%;
   padding: 0%;
@@ -26,10 +47,19 @@ body {
   font-family: var(--fuente-principal);
   line-height: 1.6;
   text-align: justify;
-
 }
-
-.capa-morada {
+main{
+  flex: 1;
+  padding: 3rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}
+h1, h2, h3 {
+  color: var(--color-principal);
+  margin-bottom: 1rem;
+}
+.banner {
   background-color: var(--color-primario);
   position: fixed;
   z-index: 10;
@@ -37,14 +67,13 @@ body {
   height: auto;
   left: 0%;
   top: 0%;
-  box-sizing: border-box;
+  box-sizing: border-box;      
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 5%;
 
 }
-
 
 h1 {
   color: #bfacf0;
@@ -62,7 +91,6 @@ h1 {
   margin: 0%;
 
 }
-
 #navmenu a {
   text-decoration: none;
   color: var(--color-secundario);
@@ -70,30 +98,12 @@ h1 {
   font-size: 1.2rem;
   word-spacing: normal;
 }
-
 #navmenu a:hover {
   color: var(--color-blanco);
   transition: color 0.3s ease;
 }
-
-.contenido {
-  position: relative;
-  margin-top: 9rem;
-  padding-left: 5%;
-  padding-right: 2%;
-}
-
-.saludo {
-  font-size: 2.5rem;
-  color: var(--color-primario);
-  text-align: center;
-  font-family: var(--fuente-principal);
-  font-weight: bold;
-  border: 2px solid var(--color-primario);
-  background-color: var(--color-secundario);
-  border-radius: 15px;
-  padding: 10px;
-  margin-bottom: 20px;
+#nosotros{
+  padding-top: 10rem;
 }
 
 span {
@@ -188,22 +198,32 @@ h3 {
 
 h4 {
   color: var(--color-subtitulos);
-  font-size: 1.2rem;
+  font-size: 2rem;
   font-family: var(--fuente-secundaria);
   text-align: left;
   margin-top: 1rem;
   font-weight: bolder;
 }
 .product-grid {
-  background-color:var(--color-accento);
+  flex: 1;
+  padding: 3rem 1.5rem;
+  padding-top: 6rem; /* <-- Agrega esto para empujar el contenido hacia abajo */
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+  background-color:var(--color-fondo);
 
 }
 img {
-  max-width: 100%;
+  max-width: 50%;
   height: auto;
   display: block;
-  margin: 0 auto;
-  border-radius: 15px;
+  margin: 15px auto;
+  border-radius: 20px;
+ transition: transform 0.3s ease;
+}
+img:hover{
+  transform: translateY(-8px);
 }
 
 .price {
@@ -216,6 +236,22 @@ img {
 }
 
 .price:hover {
+  color: var(--color-accento);
+  cursor: pointer;
+}
+.btn-pedido{
+  text-decoration: none;
+  background-color: var(--color-secundario);
+  color: #6818b4;
+  text-align: center;
+  width: 150px;
+  border: 2px solid var(--color-secundario);
+  padding: 10px 10px;
+  border-radius: 19px;
+  display: block;
+  margin: 20px auto;
+}
+.btn-pedido:hover{
   color: var(--color-accento);
   cursor: pointer;
 }
