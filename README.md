@@ -7,4 +7,6 @@ carpetas que deben contener:
 - Html
 - Css
 - Javascript
-- Backend
+- node.js
+- server.js
+  
