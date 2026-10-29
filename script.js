@@ -1,9 +1,12 @@
+
 // Seleccionamos los elementos del formulario por su ID
 const selectTamaño = document.getElementById('tamaño');
 const selectHojas = document.getElementById('hojas');
 const selectencuadernado = document.getElementById('encuadernado');
 const btnCotizar = document.getElementById('btn-cotizar');
 const divResultado = document.getElementById('resultado-cotizacion');
+
+
 
 const precios = {
   tamaños:{

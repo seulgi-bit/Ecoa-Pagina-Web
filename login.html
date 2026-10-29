@@ -1,0 +1,67 @@
+<!--<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Ecoa | Alma de bosque </title>
+   <link rel="icon" href="./assets/img/logoecoa.png" type="image/png">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <div class="banner">
+    <header class="header">
+      <button id="btn-menu" class="btn-menu"><i class="fa-solid fa-bars"></i></button>
+      <div class="logo">
+        <h1>Ecoa</h1>
+      </div>
+      <nav id="navmenu" class="nav">
+          <a href="./inicio.html">Inicio</a>
+          <a href="./sobreecoa.html">Sobre Ecoa</a>
+          <a href="./catalogo.html">Catalogo</a>
+          <a href="./personalizar.html">Personalizar</a>
+          <a href="./contacto.html">Contacto</a> 
+          <a href="./login.html">Iniciar sesion</a>
+        </nav>
+    </header>
+    -->
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecoa | Iniciar Sesión</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="login-container">
+        <div class="login-card">
+            <h1>Iniciar Sesión</h1>
+            <p>Bienvenido de vuelta a Ecoa</p>
+
+            <!-- Formulario de acceso -->
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" required placeholder="tu@correo.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Contraseña</label>
+                    <input type="password" id="password" required placeholder="********">
+                </div>
+
+                <button type="submit" class="btn-primary">Entrar</button>
+            </form>
+
+            <p id="mensajeError" class="error-msg"></p>
+        </div>
+    </main>
+    <script src="login.js"></script>
+</body>
+</html>

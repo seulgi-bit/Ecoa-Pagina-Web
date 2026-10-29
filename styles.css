@@ -10,55 +10,17 @@
   --fuente-principal: "Plus Jakarta Sans", sans-serif;
   --fuente-secundaria: "Playfair Display", serif;
 }
+/*reseteo principal*/
 *{
   margin:0;
   padding: 0;
   box-sizing: border-box;
 }
+/*para que la pagina tenga la barra de scrooll en la derecha*/
 html {
   scroll-behavior: smooth;
 }
-#inicio{
-  padding-top: 10rem; 
-}
-.titulo{
-  color:var(--color-accento);
-}
-.hero {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaecoa2.jpeg');
-color: #ffffff;
-  background-size: cover;       
-  background-position: center;  
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  min-height: 400px; 
-}
-body {
-  margin: 0%;
-  padding: 0%;
-  box-sizing: border-box;
-  background-color: var(--color-fondo);
-  position: relative;
-  z-index: 1;
-  font-family: var(--fuente-principal);
-  line-height: 1.6;
-  text-align: justify;
-}
-main{
-  flex: 1;
-  padding: 3rem 1.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
-  width: 100%;
-}
-h1, h2, h3 {
-  color: var(--color-principal);
-  margin-bottom: 1rem;
-}
+/*banner de la parte de arriba,que aparece en todas las pestañas*/
 .banner {
   background-color: var(--color-primario);
   position: fixed;
@@ -72,61 +34,89 @@ h1, h2, h3 {
   justify-content: space-between;
   align-items: center;
   padding: 10px 5%;
-
 }
-
-h1 {
-  color: #bfacf0;
-  font-size: 1.8rem;
+/*titulo de la empresa en el banner*/
+.nombre{
+  color:var(--color-accento);
+  font-size: 1.0rem;
   text-align: left;
   padding: 0%;
   margin: 0%;
+  font-family:var(--fuente-principal) ;
 }
-
+/*enlaces del banner y distrubucion*/
 #navmenu {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1rem;
   margin: 0%;
-
 }
+/*para acomodar cada enlace*/
 #navmenu a {
-  text-decoration: none;
+  text-decoration: none;/*quita la raya azul de los enlaces por defecto*/
   color: var(--color-secundario);
   white-space: nowrap;
   font-size: 1.2rem;
   word-spacing: normal;
 }
+/*para que cambie de color al pasar el mouse o oprimirlo*/
 #navmenu a:hover {
   color: var(--color-blanco);
   transition: color 0.3s ease;
 }
-#nosotros{
-  padding-top: 10rem;
-}
 
-span {
-  font-style: italic;
-  font-size: larger;
-  font-family: var(--fuente-secundaria);
-  font-weight: bold;
-  color: #171411;
+/*portada inicial de la pagina inicio.html*/
+#inicio{
+  padding-top: 10rem; 
+}
+/*titulo de la portada inicio.html*/
+.titulo{
+  color:var(--color-accento);
   text-align: center;
 }
-
-#inicio {
+/*texto abajo del titulo de la portada*/
+.diseña{
   text-align: center;
+  color: var(--color-blanco);
+  font-weight: 800;
+  font-family:var(--fuente-principal);
 }
+/*texto abajo del titulo inicio.html con la imagen de abajo*/
 
-h2 {
-  color: #ad87ea;
-  font-size: 2rem;
-  text-align: center;
-  font-weight: 1000;
+  .hero {
+  background-image: url('assets/img/casaecoa2.jpeg'); /* O el nombre de tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  
+  /* Agrega esto para darle altura y espacio a la sección */
+  min-height: 80vh; /* Ocupa el 80% de la altura de la pantalla */
+  padding: 4rem 2rem;
+  width: 100%;
 }
-
+  /*background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaecoa2.jpeg');
+  color: var(--color-blanco);
+  font: size 15px;
+  background-size: cover;       
+  background-position: center;  
+  background-repeat: no-repeat;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 4rem 2rem;
+  min-height: 400px; 
+}
+/*boton de crea tu libreta inico.html*/
 .btn-primary {
+  font-family:var(--fuente-principal) ;
+  font-weight: 500;
   text-decoration: none;
   background-color: var(--color-secundario);
   color: #6818b4;
@@ -137,15 +127,65 @@ h2 {
   border-radius: 19px;
   display: block;
   margin: 20px auto;
+  padding-top: 20px;
 }
-
+/*cambio de color al pasar el mouse por el boton inicio.html*/
 .btn-primary:hover {
   background-color: var(--color-primario);
   color: var(--color-blanco);
   cursor: pointer;
   border: 2px solid var(--color-primario);
 }
+/*todo el texto en las pestañas*/ 
+body {
+  margin: 0%;
+  padding: 0%;
+  box-sizing: border-box;
+  background-color: var(--color-fondo);
+  position: relative;
+  z-index: 1;
+  line-height: 1.6;
+}
+  /*
+main{
+  flex: 1;
+  padding: 3rem 1.5rem;
+  max-width: 1100px;
+  margin: 0 auto;
+  width: 100%;
+}*//*
+span {
+  font-style: italic;
+  font-size: larger;
+  font-family: var(--fuente-secundaria);
+  font-weight: bold;
+  color: #171411;
+  text-align: center;
+}*/
 
+/*todos los titulos h2 modificados*/
+h2 {
+  color: #ad87ea;
+  font-size: 2rem;
+  text-align: center;
+  font-weight: 1000;
+  font-family:var(--fuente-principal);
+}
+/*texto sobreecoa*/
+.sobreecoa{
+  padding-top: 7rem;
+  margin: 5%;
+  text-align: justify;
+}
+/*subtitulo de sobreecoa.html*/
+h5{
+text-align: center;
+font-size:large;
+color: var(--color-secundario);
+font-size:var(--fuente-secundaria) ;
+
+}
+/*titulos h3 modificados,titulos de sobreecoa.html*/
 h3 {
   color: var(--color-subtitulos);
   font-size: 1.5rem;
@@ -153,49 +193,52 @@ h3 {
   text-align: center;
   margin-top: 2rem;
 }
-
+/*titulo de eco-friendly de sobreecoa.html*/
 .reciclado {
   border: 2px solid rgb(158, 213, 158);
   background-color: rgb(167, 219, 167);
   border-radius: 15px;
   padding: 10px;
 }
-
+/* para que al pasar el mouse en el boton titulo cambie de color*/
 .reciclado:hover {
   background-color: rgb(212, 248, 212);
   color: rgb(123, 211, 35);
   cursor: pointer;
   border: 2px solid rgb(158, 213, 158);
+  transform: translateY(-8px)
 }
-
+/*titulo de diseños personalizados en sobreecoa.html*/
 .personalizados {
   border: 2px solid rgb(223, 209, 154);
   background-color: rgb(221, 205, 141);
   border-radius: 15px;
   padding: 10px;
 }
-
+/*para que al pasar el mouse cambie de color*/
 .personalizados:hover {
   background-color: rgb(240, 232, 197);
   color: rgb(228, 197, 26);
   cursor: pointer;
   border: 2px solid rgb(223, 209, 154);
+  transform: translateY(-8px)
 }
-
+/*titulo de hecho con amor sobreecoa.html*/
 .hecho-con-amor {
   border: 2px solid #e79bc1;
   background-color: #e79bc1;
   border-radius: 15px;
   padding: 10px;
 }
-
+/*parq ue cambie al pasar el mouse*/
 .hecho-con-amor:hover {
   background-color: #ebc9da;
   color: rgb(233, 71, 98);
   cursor: pointer;
   border: 2px solid #e79bc1;
+  transform: translateY(-8px)
 }
-
+/*titulos en h4 y los titulos de los productos en catalogo.html*/
 h4 {
   color: var(--color-subtitulos);
   font-size: 2rem;
@@ -204,28 +247,30 @@ h4 {
   margin-top: 1rem;
   font-weight: bolder;
 }
-.product-grid {
+/*seccion del catalogo catalogo.html*/
+.catalogo {
   flex: 1;
   padding: 3rem 1.5rem;
-  padding-top: 6rem; /* <-- Agrega esto para empujar el contenido hacia abajo */
+  padding-top: 10rem; /* <-- Agrega esto para empujar el contenido hacia abajo */
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
   background-color:var(--color-fondo);
-
 }
-img {
-  max-width: 50%;
+/* imagenes del catalogo.html */
+.img-productos {
+  max-width: 70%;
   height: auto;
   display: block;
   margin: 15px auto;
   border-radius: 20px;
  transition: transform 0.3s ease;
 }
+/* para que las imagenes al pasarle el mouse se muevan cataolog.html*/
 img:hover{
   transform: translateY(-8px);
 }
-
+/*el precio de cada producto,color y subrayado*/
 .price {
   text-decoration: underline;
   display: block;
@@ -234,11 +279,13 @@ img:hover{
   color: var(--color-primario);
   margin-top: 10px;
 }
-
+/*para que al pasar sobre el precio cambie de color*/
 .price:hover {
   color: var(--color-accento);
   cursor: pointer;
+   
 }
+/*boton de añadir al carrito*/
 .btn-pedido{
   text-decoration: none;
   background-color: var(--color-secundario);
@@ -251,11 +298,19 @@ img:hover{
   display: block;
   margin: 20px auto;
 }
+/*para que el boton cambie de color al pasar el mouse*/
 .btn-pedido:hover{
-  color: var(--color-accento);
+  color: var(--color-blanco);
+  background-color:var(--color-primario);
   cursor: pointer;
+  border:var(--color-primario);
+  transform: translateY(-8px)
+} /*contenido de personalizar.html*/
+.customizer{
+  padding-top: 10rem;
+  margin: 0%;
 }
-
+/*formulario para personalizar personalizar.html*/
 #form-personalizar {
   border: 2px solid var(--color-secundario);
   background-color: var(--color-secundario);
@@ -370,10 +425,75 @@ img:hover{
   cursor: pointer;
   border: 2px solid var(--color-secundario);
 }
+/* Estilos específicos para la página de login.html */
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  padding: 2rem;
+}
 
+.login-card {
+  background-color: var(--color-accento);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-card h1 {
+  color: var(--color-primario);
+  margin-bottom: 0.5rem;
+  text-align: center;
+  font-family:var(--fuente-principal);
+}
+
+.login-card p {
+  color:var(--color-blanco);
+  font-size:var(--fuente-principal);
+  margin-bottom: 1.5rem;
+  font-size: 0.95rem;
+}
+
+.login-card .form-group {
+  text-align: left;
+  margin-bottom: 1.2rem;
+  border: radius 15px;;
+}
+
+.login-card button {
+  width: 100%;
+  margin-top: 1rem;
+}
+
+.error-msg {
+  color: #d9534f;
+  font-size: 0.85rem;
+  margin-top: 1rem;
+}
+footer {
+  background-color: var(--color-primario, #6b21a8); /* Tu color morado */
+  color: #ffffff;
+  width: 100vw;               /* Ocupa todo el ancho de la ventana */
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;         /* Centra y fuerza el ancho completo */
+  margin-right: -50vw;
+  padding: 2rem 0;            /* Espacio interno arriba y abajo */
+  text-align: center;
+  margin-top: auto;   
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.238);  
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;      /* Empuja el footer hacia abajo si usas flexbox en el body */
+}
+/*
 footer,
 .footer {
-  background-color: var(--color-primario);
+  /*background-color: var(--color-primario);
   color: var(--color-blanco);
   text-align: center;
   padding: 30px 20px;
@@ -382,7 +502,7 @@ footer,
   border-top-right-radius: 20px;
   box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.238);
 
-}
+}*/
 
 ::-webkit-scrollbar {
   width: 9px;
