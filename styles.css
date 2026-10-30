@@ -83,12 +83,13 @@ html {
   font-family:var(--fuente-principal);
 }
 /*texto abajo del titulo inicio.html con la imagen de abajo*/
-
+/*fondo de la portada de inicio*/
   .hero {
   background-image: url('assets/img/casaecoa2.jpeg'); /* O el nombre de tu imagen */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaecoa2.jpeg');
   
   display: flex;
   flex-direction: column;
@@ -100,7 +101,7 @@ html {
   padding: 4rem 2rem;
   width: 100%;
 }
-  /*background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaecoa2.jpeg');
+ /* background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaecoa2.jpeg');
   color: var(--color-blanco);
   font: size 15px;
   background-size: cover;       
@@ -121,13 +122,14 @@ html {
   background-color: var(--color-secundario);
   color: #6818b4;
   text-align: center;
-  width: 150px;
-  border: 2px solid var(--color-secundario);
-  padding: 10px 10px;
-  border-radius: 19px;
-  display: block;
-  margin: 20px auto;
-  padding-top: 20px;
+
+  display:inline-block ;
+  margin:20px auto;
+ 
+  padding: 12px 24px;
+  border-radius: 10px;
+  
+  border: 2px solid var(--color-secundario)
 }
 /*cambio de color al pasar el mouse por el boton inicio.html*/
 .btn-primary:hover {
@@ -137,7 +139,11 @@ html {
   border: 2px solid var(--color-primario);
 }
 /*todo el texto en las pestañas*/ 
+main{
+  padding-top: 130px;
+}
 body {
+  padding-top: 120px;
   margin: 0%;
   padding: 0%;
   box-sizing: border-box;
@@ -395,8 +401,10 @@ img:hover{
   color: var(--color-primario);
 }
 
+
 #contacto input,
-#contacto textarea {
+#contacto textarea { 
+  
   width: 100%;
   padding: 10px 12px;
   border: 1px solid var(--color-primario);
@@ -503,7 +511,7 @@ footer,
   box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.238);
 
 }*/
-
+/*la barra de scroll*/
 ::-webkit-scrollbar {
   width: 9px;
 }
