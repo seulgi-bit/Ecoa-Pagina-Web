@@ -34,7 +34,7 @@
 <main>
 <section id="personalizar" class="customizer">
   <h2> Personaliza tu Ecoa </h2>
-  <p>Elige las caracteristicas de tu libreta y se te daria un valor aproximado</p>
+  <p class="personaliz">Elige las caracteristicas de tu libreta y se te daria un valor aproximado</p>
 <form id="form-personalizar">
   <div class="form-group">
     <label for="tamaño">1. Elige el tamaño:</label>
@@ -53,8 +53,8 @@
     <option value="cuadriculadas">Cuadriculadas</option>
   </select>
   <div class="form-group">
-  <label for="hojas">3. Tipo de encuadernacion:</label>
-  <select name="encuadernacion" id="encuadernacion">
+  <label for="encuadernado">3. Tipo de encuadernado:</label>
+  <select name="encuadernado" id="encuadernado">
     <option value="cosido">Cosido</option>
     <option value="argollado">Argollado</option>
     <option value="grapado"> Grapado</option>
@@ -62,11 +62,18 @@
 </div>
 <button type="button" id="btn-cotizar" class="btn-secundary">Calcular precio</button>
 </form>
-<div id="resultado-cotizacion" class="cotizacion-box">
-  <p>Selecciona tus opciones para ver la vista previa y costo estimado.</p>
+
+<div id="resultado-cotizacion" style="margin-top: 15px; font-weight: bold;">
+  Total
 </div>
 </section>
+ 
+
 </main>
-<script src="script.js"></script>
+<script src="personalizar.js"></script>
+<footer>
+  <p >&copy; 2026 Ecoa.Todos los derechos reservados.</p>
+</footer>
+</div>
 </body>
 </html>

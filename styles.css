@@ -1,7 +1,8 @@
 :root {
   --color-primario: #7125d5;
+  --color-primario2: #774ab3;
   --color-secundario: #9fdac3;
-  --color-terciario: #ab9970;
+  --color-terciario: #7ecd81;
   --color-texto: #0c0926;
   --color-subtitulos: #2b2b35;
   --color-accento: #a284fd;
@@ -10,16 +11,19 @@
   --fuente-principal: "Plus Jakarta Sans", sans-serif;
   --fuente-secundaria: "Playfair Display", serif;
 }
+
 /*reseteo principal*/
-*{
-  margin:0;
+* {
+  margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
 /*para que la pagina tenga la barra de scrooll en la derecha*/
 html {
   scroll-behavior: smooth;
 }
+
 /*banner de la parte de arriba,que aparece en todas las pestañas*/
 .banner {
   background-color: var(--color-primario);
@@ -29,37 +33,43 @@ html {
   height: auto;
   left: 0%;
   top: 0%;
-  box-sizing: border-box;      
+  box-sizing: border-box;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 10px 5%;
 }
+
 /*titulo de la empresa en el banner*/
-.nombre{
-  color:var(--color-accento);
+.nombre {
+  color: var(--color-accento);
   font-size: 1.0rem;
   text-align: left;
   padding: 0%;
   margin: 0%;
-  font-family:var(--fuente-principal) ;
+  font-family: var(--fuente-principal);
 }
-/*enlaces del banner y distrubucion*/
+
+/*enlaces del banner y distribucion*/
 #navmenu {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 1rem;
   margin: 0%;
+  width: 100%
 }
+
 /*para acomodar cada enlace*/
 #navmenu a {
-  text-decoration: none;/*quita la raya azul de los enlaces por defecto*/
+  text-decoration: none;
+  /*quita la raya azul de los enlaces por defecto*/
   color: var(--color-secundario);
   white-space: nowrap;
   font-size: 1.2rem;
   word-spacing: normal;
 }
+
 /*para que cambie de color al pasar el mouse o oprimirlo*/
 #navmenu a:hover {
   color: var(--color-blanco);
@@ -67,41 +77,46 @@ html {
 }
 
 /*portada inicial de la pagina inicio.html*/
-#inicio{
-  padding-top: 10rem; 
+#inicio {
+  padding-top: 10rem;
 }
+
 /*titulo de la portada inicio.html*/
-.titulo{
-  color:var(--color-accento);
+.titulo {
+  color: var(--color-accento);
   text-align: center;
 }
+
 /*texto abajo del titulo de la portada*/
-.diseña{
+.diseña {
   text-align: center;
   color: var(--color-blanco);
   font-weight: 800;
-  font-family:var(--fuente-principal);
+  font-family: var(--fuente-principal);
 }
+
 /*texto abajo del titulo inicio.html con la imagen de abajo*/
 /*fondo de la portada de inicio*/
-  .hero {
-  background-image: url('assets/img/casaecoa2.jpeg'); /* O el nombre de tu imagen */
+.hero {
+  /* O el nombre de tu imagen */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaecoa2.jpeg');
-  
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  
+
   /* Agrega esto para darle altura y espacio a la sección */
-  min-height: 80vh; /* Ocupa el 80% de la altura de la pantalla */
+  min-height: 80vh;
+  /* Ocupa el 80% de la altura de la pantalla */
   padding: 4rem 2rem;
   width: 100%;
 }
- /* background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaecoa2.jpeg');
+
+/* background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaecoa2.jpeg');
   color: var(--color-blanco);
   font: size 15px;
   background-size: cover;       
@@ -116,21 +131,22 @@ html {
 }
 /*boton de crea tu libreta inico.html*/
 .btn-primary {
-  font-family:var(--fuente-principal) ;
+  font-family: var(--fuente-principal);
   font-weight: 500;
   text-decoration: none;
   background-color: var(--color-secundario);
   color: #6818b4;
   text-align: center;
 
-  display:inline-block ;
-  margin:20px auto;
- 
+  display: inline-block;
+  margin: 20px auto;
+
   padding: 12px 24px;
   border-radius: 10px;
-  
+
   border: 2px solid var(--color-secundario)
 }
+
 /*cambio de color al pasar el mouse por el boton inicio.html*/
 .btn-primary:hover {
   background-color: var(--color-primario);
@@ -138,10 +154,13 @@ html {
   cursor: pointer;
   border: 2px solid var(--color-primario);
 }
-/*todo el texto en las pestañas*/ 
-main{
-  padding-top: 130px;
+
+/*todo el texto en las pestañas*/
+main {
+  padding-top: 100px;
 }
+
+/*cuerpo en plural de la pestaña con banner y texto*/
 body {
   padding-top: 120px;
   margin: 0%;
@@ -152,21 +171,14 @@ body {
   z-index: 1;
   line-height: 1.6;
 }
-  /*
+
+/*
 main{
   flex: 1;
   padding: 3rem 1.5rem;
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
-}*//*
-span {
-  font-style: italic;
-  font-size: larger;
-  font-family: var(--fuente-secundaria);
-  font-weight: bold;
-  color: #171411;
-  text-align: center;
 }*/
 
 /*todos los titulos h2 modificados*/
@@ -175,22 +187,97 @@ h2 {
   font-size: 2rem;
   text-align: center;
   font-weight: 1000;
-  font-family:var(--fuente-principal);
+  font-family: var(--fuente-principal);
+}
+
+/*logo sobreecoa.html*/
+.img-logo {
+  max-width: 40%;
+  height: auto;
+  display: block;
+  margin: 15px auto;
+  border-radius: 30px;
+  border: 2px solid var(--color-primario2);
+  transition: transform 0.3s ease;
+}
+
+/*texto slogan sobreecoa.html*/
+h5 {
+  text-decoration: underline;
+  text-align: center;
+  color: var(--color-terciario);
+
+  font-size: 1.8rem;
+}
+
+.subtitule {
+  color: #6b21a8;
+  text-align: center;
+  font-size: 1.3em;
+}
+.plan-negocios{
+  display: flex;             /* Alinea los hijos en horizontal */
+    flex-direction: row;       /* Mantiene la dirección de izquierda a derecha */
+    justify-content: center;   /* Centra las tarjetas en la pantalla */
+    gap: 20px;                 /* Espacio uniforme entre cada tarjeta */
+    flex-wrap: wrap;           /* Permite que bajen si la pantalla es muy pequeña (para celulares) */
+    
+    padding-top: 5%;
+    margin: 5%;
+    text-align: justify;
+
+}
+.text-plan {
+  flex: 1;                    /* Hace que todas las tarjetas midan el mismo ancho */
+  max-width: 350px;           /* Limita el ancho máximo para que no se estiren demasiado */
+  border: 2px solid var(--color-fondo);
+  background-color: #c8a5ecd6;
+  border-radius: 15px;
+  border-color: #8050ea;
+  margin-bottom: 25px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.text-plan:hover {
+  transform: translateY(-8px);
+  /* Negativo para que suba */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  /* Sombra más elegante */
+}
+.titulo-plan{
+  color:var(--color-primario);
+  font-family: var(--fuente-secundaria);
+}
+/*titulo de porque escojer ecoa*/
+.titulo-sobre{
+  color:#ddd652ce;
 }
 /*texto sobreecoa*/
-.sobreecoa{
-  padding-top: 7rem;
+.sobreecoa {
+  padding-top: 5%;
   margin: 5%;
   text-align: justify;
 }
-/*subtitulo de sobreecoa.html*/
-h5{
-text-align: center;
-font-size:large;
-color: var(--color-secundario);
-font-size:var(--fuente-secundaria) ;
-
+/*texto de porque elegir ecoa*/
+.text-sobreecoa {
+  text-align: center;
+  border: 2px solid var(--color-fondo);
+  background-color: #e8e4aab6;
+  border-radius: 15px;
+  border-color: #e4cf79;
+  margin-bottom: 25px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
+
+.text-sobreecoa:hover {
+  transform: translateY(-8px);
+  /* Negativo para que suba */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  /* Sombra más elegante */
+}
+
 /*titulos h3 modificados,titulos de sobreecoa.html*/
 h3 {
   color: var(--color-subtitulos);
@@ -199,6 +286,25 @@ h3 {
   text-align: center;
   margin-top: 2rem;
 }
+/*texto de las features-grid de ecoa*/
+.features-reciclado{
+font-family: var(--fuente-secundaria);
+font-weight: 700;
+color: #0c852a;
+text-align: center;
+}
+.features-personalizado{
+  font-family: var(--fuente-secundaria);
+font-weight: 700;
+color: #a4920a;
+text-align: center;
+}
+.features-conamor{
+  font-family: var(--fuente-secundaria);
+font-weight: 700;
+color: #850c5b;
+text-align: center;
+}
 /*titulo de eco-friendly de sobreecoa.html*/
 .reciclado {
   border: 2px solid rgb(158, 213, 158);
@@ -206,6 +312,7 @@ h3 {
   border-radius: 15px;
   padding: 10px;
 }
+
 /* para que al pasar el mouse en el boton titulo cambie de color*/
 .reciclado:hover {
   background-color: rgb(212, 248, 212);
@@ -214,6 +321,7 @@ h3 {
   border: 2px solid rgb(158, 213, 158);
   transform: translateY(-8px)
 }
+
 /*titulo de diseños personalizados en sobreecoa.html*/
 .personalizados {
   border: 2px solid rgb(223, 209, 154);
@@ -221,6 +329,7 @@ h3 {
   border-radius: 15px;
   padding: 10px;
 }
+
 /*para que al pasar el mouse cambie de color*/
 .personalizados:hover {
   background-color: rgb(240, 232, 197);
@@ -229,6 +338,7 @@ h3 {
   border: 2px solid rgb(223, 209, 154);
   transform: translateY(-8px)
 }
+
 /*titulo de hecho con amor sobreecoa.html*/
 .hecho-con-amor {
   border: 2px solid #e79bc1;
@@ -236,7 +346,8 @@ h3 {
   border-radius: 15px;
   padding: 10px;
 }
-/*parq ue cambie al pasar el mouse*/
+
+/*para que cambie al pasar el mouse*/
 .hecho-con-amor:hover {
   background-color: #ebc9da;
   color: rgb(233, 71, 98);
@@ -253,29 +364,34 @@ h4 {
   margin-top: 1rem;
   font-weight: bolder;
 }
+
 /*seccion del catalogo catalogo.html*/
 .catalogo {
   flex: 1;
   padding: 3rem 1.5rem;
-  padding-top: 10rem; /* <-- Agrega esto para empujar el contenido hacia abajo */
+  padding-top: 5%;
+  /* <-- Agrega esto para empujar el contenido hacia abajo */
   max-width: 1100px;
   margin: 0 auto;
   width: 100%;
-  background-color:var(--color-fondo);
+  background-color: var(--color-fondo);
 }
+
 /* imagenes del catalogo.html */
 .img-productos {
-  max-width: 70%;
+  max-width: 40%;
   height: auto;
   display: block;
   margin: 15px auto;
   border-radius: 20px;
- transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
+
 /* para que las imagenes al pasarle el mouse se muevan cataolog.html*/
-img:hover{
+img:hover {
   transform: translateY(-8px);
 }
+
 /*el precio de cada producto,color y subrayado*/
 .price {
   text-decoration: underline;
@@ -285,14 +401,16 @@ img:hover{
   color: var(--color-primario);
   margin-top: 10px;
 }
+
 /*para que al pasar sobre el precio cambie de color*/
 .price:hover {
   color: var(--color-accento);
   cursor: pointer;
-   
+
 }
+
 /*boton de añadir al carrito*/
-.btn-pedido{
+.btn-pedido {
   text-decoration: none;
   background-color: var(--color-secundario);
   color: #6818b4;
@@ -304,25 +422,51 @@ img:hover{
   display: block;
   margin: 20px auto;
 }
+
 /*para que el boton cambie de color al pasar el mouse*/
-.btn-pedido:hover{
+.btn-pedido:hover {
   color: var(--color-blanco);
-  background-color:var(--color-primario);
+  background-color: var(--color-primario);
   cursor: pointer;
-  border:var(--color-primario);
+  border: var(--color-primario);
   transform: translateY(-8px)
-} /*contenido de personalizar.html*/
-.customizer{
-  padding-top: 10rem;
+}
+
+/*contenido de personalizar.html*/
+.customizer {
+  /* O el nombre de tu imagen */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('./assets/img/ecoainterior.jfif');
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  /* Agrega esto para darle altura y espacio a la sección */
+  min-height: 80vh;
+  /* Ocupa el 80% de la altura de la pantalla */
+  padding: 4rem 2rem;
+  width: 100%;
+
+  padding-top: 5%;
   margin: 0%;
 }
+.personaliz{
+  text-align: center;
+  font-size: 1.5rem;
+  color:var(--color-blanco)
+}
+
 /*formulario para personalizar personalizar.html*/
 #form-personalizar {
   border: 2px solid var(--color-secundario);
   background-color: var(--color-secundario);
   padding: 20px;
   border-radius: 15px;
-  max-width: 500px;
+  max-width: 400px;
   margin: 0 auto;
 }
 
@@ -333,12 +477,13 @@ img:hover{
   flex-direction: column;
   gap: 5px;
 }
-
+/*texto encima de la casilla*/
 .form-group label {
   font-weight: bold;
   color: var(--color-primario);
+  font-size: 1.3rem;
 }
-
+/*letra dentro de la casilla*/
 .form-group select {
   width: 100%;
   padding: 10px 12px;
@@ -348,7 +493,7 @@ img:hover{
   box-sizing: border-box;
   outline: none;
 }
-
+/*boton de calcular precio personalizar.html*/
 #btn-cotizar {
   text-decoration: none;
   background-color: var(--color-primario);
@@ -368,12 +513,37 @@ img:hover{
   cursor: pointer;
   border: 2px solid var(--color-accento);
 }
+/* Estilo para la casilla donde se muestra el resultado */
+#resultado-cotizacion {
+  margin-top: 20px;
+  padding: 15px 20px;
+  background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco semitransparente */
+  border: 2px solid #b8a9c9; /* Un borde punteado con tono pastel/lila */
+  border-radius: 10px; /* Bordes redondeados suaves */
+  text-align: center;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: var(--color-subtitulos); /* Tono verde oscuro acorde a tu marca */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra muy sutil */
+}
 
-.titulo-seccion {
+/* Estilos para los textos internos si los generas con HTML */
+#resultado-cotizacion p {
+  margin: 5px 0;
+}
+
+/*todo el texto en la pestaña contacto*/
+#contacto {
+  padding-top: 10%;
+}
+
+/*titulo de contactame*/
+.titulo-contacto {
+  padding-top: 5%;
   color: var(--color-primario);
   font-family: var(--fuente-secundaria);
 }
 
+/*formulario de contacto.html*/
 #contacto {
   border: 2px solid var(--color-accento);
   background-color: var(--color-accento);
@@ -383,12 +553,14 @@ img:hover{
   text-align: center;
 }
 
+/* texto interior del formulario*/
 #contacto form {
   max-width: 450px;
   margin: 0 auto;
   text-align: left;
 }
 
+/* casillas del formulario*/
 .campo {
   margin-bottom: 15px;
   display: flex;
@@ -396,15 +568,16 @@ img:hover{
   gap: 5px;
 }
 
+/*letra del texto encima de la casilla*/
 .campo label {
   font-weight: bold;
   color: var(--color-primario);
 }
 
-
+/*area de escribir en las casillas*/
 #contacto input,
-#contacto textarea { 
-  
+#contacto textarea {
+
   width: 100%;
   padding: 10px 12px;
   border: 1px solid var(--color-primario);
@@ -414,6 +587,7 @@ img:hover{
   outline: none;
 }
 
+/*boton de enviar mensaje en contacto.html*/
 .btn-enviar {
   text-decoration: none;
   background-color: var(--color-primario);
@@ -427,14 +601,17 @@ img:hover{
   margin: 20px auto;
 }
 
+/*para al pasar el mouse por encima cambie color */
 .btn-enviar:hover {
   background-color: var(--color-secundario);
   color: var(--color-blanco);
   cursor: pointer;
   border: 2px solid var(--color-secundario);
 }
+
 /* Estilos específicos para la página de login.html */
 .login-container {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaecoa.jpeg');
   display: flex;
   justify-content: center;
   align-items: center;
@@ -443,6 +620,15 @@ img:hover{
 }
 
 .login-card {
+position: relative;             /* Permite ubicar la flecha en la esquina superior */
+  max-width: 400px;
+  margin: 50px auto;              /* Centra la tarjeta horizontalmente */
+  padding: 35px 30px;
+  background-color: #a87bf7;      /* Color morado pastel de fondo */
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra elegante */
+  text-align: center;
+
   background-color: var(--color-accento);
   padding: 2.5rem;
   border-radius: 16px;
@@ -451,30 +637,113 @@ img:hover{
   max-width: 400px;
   text-align: center;
 }
+.btn-back {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+
+.btn-back:hover {
+  transform: translateX(-4px);    /* Se mueve sutilmente a la izquierda */
+  color: #e4cf79;                 /* Cambia a tono dorado o primario */
+}
 
 .login-card h1 {
   color: var(--color-primario);
   margin-bottom: 0.5rem;
+  margin-top: 10px;
+  font-size: 1.8rem;
   text-align: center;
-  font-family:var(--fuente-principal);
+  font-family: var(--fuente-secundaria);
 }
-
+/*texto debajo de inicio de sesion*/
 .login-card p {
-  color:var(--color-blanco);
-  font-size:var(--fuente-principal);
+  color: var(--color-blanco);
   margin-bottom: 1.5rem;
-  font-size: 0.95rem;
+  font-size: 1.3rem;
 }
 
 .login-card .form-group {
   text-align: left;
   margin-bottom: 1.2rem;
-  border: radius 15px;;
+  border: radius 15px;
+  ;
 }
+.login-card input {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  outline: none;
+  font-size: 0.95rem;
+  padding: 10px 14px;
+  box-sizing: border-box;
+  transition: border-color 0.3s ease;
+}
+.login-card input:focus {
+  border-color: #8c82e9;
+}
+.forgot-pass {
+  display: block;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #ffffff;
+  text-decoration: none;
+  margin-bottom: 1.2rem;
 
+}
+.forgot-pass:hover {
+  text-decoration: underline;
+  
+}
+.btn-entrar {
+  width: 100%;
+  padding: 12px;
+  background-color: #a3e6be;       /* Verde pastel acorde a Ecoa */
+  color: #8c58de;
+  border: none;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+.btn-entrar:hover {
+  color: var(--color-terciario);
+  background-color:var(--color-primario);
+  transform: translateY(-2px);
+}
+.login-footer {
+  margin-top: 1.5rem;
+  font-size: 0.9rem;
+  color: #ffffff;
+}
+.login-footer a {
+  color: #ffffff;
+  font-weight: bold;
+  text-decoration: underline;
+}
 .login-card button {
   width: 100%;
   margin-top: 1rem;
+  font-size: rem;
+}
+.login-card label {
+  display:block;
+  font-weight: bold;
+  color: var(--color-primario);
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+  width: 90%;          /* Hace que sea adaptable */
+    max-width: 400px;    /* <-- ¡Aquí cambias el ancho máximo! */
+    margin: 0 auto;
 }
 
 .error-msg {
@@ -482,35 +751,33 @@ img:hover{
   font-size: 0.85rem;
   margin-top: 1rem;
 }
+.login-body{
+background-image:linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaecoa.jpeg'); 
+}
+
+
+
 footer {
-  background-color: var(--color-primario, #6b21a8); /* Tu color morado */
+  background-color: var(--color-primario, #6b21a8);
+  /* Tu color morado */
   color: #ffffff;
-  width: 100vw;               /* Ocupa todo el ancho de la ventana */
+  width: 100vw;
+  /* Ocupa todo el ancho de la ventana */
   position: relative;
   left: 50%;
   right: 50%;
-  margin-left: -50vw;         /* Centra y fuerza el ancho completo */
+  margin-left: -50vw;
+  /* Centra y fuerza el ancho completo */
   margin-right: -50vw;
-  padding: 2rem 0;            /* Espacio interno arriba y abajo */
+  padding: 2rem 0;
+  /* Espacio interno arriba y abajo */
   text-align: center;
-  margin-top: auto;   
-  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.238);  
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;      /* Empuja el footer hacia abajo si usas flexbox en el body */
-}
-/*
-footer,
-.footer {
-  /*background-color: var(--color-primario);
-  color: var(--color-blanco);
-  text-align: center;
-  padding: 30px 20px;
-  margin-top: 40px;
+  margin-top: auto;
+  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.238);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.238);
-
-}*/
+  /* Empuja el footer hacia abajo si usas flexbox en el body */
+}
 /*la barra de scroll*/
 ::-webkit-scrollbar {
   width: 9px;
