@@ -1,4 +1,4 @@
-const http = require('http');
+/*const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
@@ -46,4 +46,14 @@ const server = http.createServer((request, response) => {
 
 server.listen(3000, () => {
   console.log('Servidor ejecutándose en http://localhost:3000');
-});
+});*/
+const express = require('express');
+const app = express();
+
+app.get('/',(request,response)=>{
+
+response.send('ECOA')
+})
+app.listen(3000, () =>{
+  console.log('Servidor ejecutandose en')
+} )
