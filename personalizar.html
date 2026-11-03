@@ -36,30 +36,129 @@
   <h2> Personaliza tu Ecoa </h2>
   <p class="personaliz">Elige las caracteristicas de tu libreta y se te daria un valor aproximado</p>
 <form id="form-personalizar">
-  <div class="form-group">
-    <label for="tamaño">1. Elige el tamaño:</label>
-    <select name="tamaño" id="tamaño">
-      <option value="A6">A6-Bolsillo</option>
-      <option value="A5"select>A5- Estandar</option>
-      <option value="A4">A4 - Grande</option>
+<div class="form-group">
+    <label for="formato">1. Elige el formato:</label>
+    <select name="formato" id="formato">
+      <option value="horizontal">Horizontal</option>
+      <option value="vertical">Vertical</option>
+      <option value="cuadrado">Cuadrado</option>
+      <option value="personalizado">Personalizado</option>
     </select>
   </div>
+  <div class="form-group">
+    <label for="tamaño">2. Elige el tamaño:</label>
+    <select name="tamaño" id="tamaño">
+      <option value="A6">A6-Bolsillo</option>
+      <option value="A5">A5- Estandar</option>
+      <option value="B5">B5- Semigrande</option>
+      <option value="A4">A4- Grande</option>
+      <option value="personalizado">Personalizado</option>
+    </select>
+  </div>
+  <div class="form-group">
+  <label for="tipo-portada">3. Tipo de portada:</label>
+  <select name="tipo-portada" id="tipo-portada">
+    <option value="tapa-dura">Tapa Dura Personalizada (Pasta dura clásica)</option>
+    <option value="tapa-flexible">Tapa Semi-dura / Cartulina ecológica gruesa</option>
+    <option value="tela">Forrada en Tela Natural / Lino</option>
+    <option value="corcho">Corcho Ecológico o Sucedáneo Vintage</option>
+  </select>
+</div>
 <div class="form-group">
-  <label for="hojas">2. Tipo de hojas:</label>
+  <label for="gama-color">4. Gama de color de la portada:</label>
+  <select name="gama-color-portada" id="gama-color-portada">
+    <option value="pastel">Tonos Pastel (Suaves y delicados)</option>
+    <option value="tierra">Tonos Tierra / Vintage (Cálidos y orgánicos)</option>
+    <option value="retro">Tonos Retro / Envejecidos (Estilo nostálgico)</option>
+    <option value="vivos">Tonos Vivos / Intensos (Energéticos)</option>
+    <option value="neutros">Tonos Neutros (Elegantes y minimalistas)</option>
+    <option value="personalizado">Personalizado</option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="margen-portada">5. Diseño de bordes / márgenes de la portada:</label>
+  <select name="margen-portada" id="margen-portada">
+    <option value="sin-margen">Sin margen (Ilustración a pantalla completa)</option>
+    <option value="botanico">Margen botánico (Enredaderas y ramas finas)</option>
+    <option value="vintage">Margen vintage (Filigrana y esquinas clásicas)</option>
+    <option value="geometrico">Margen minimalista (Líneas dobles finas)</option>
+    <option value="personalizado">Personalizado</option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="portada-animada">6. Estilo de ilustración en portada:</label>
+  <select name="portada-animada" id="portada-animada">
+    <option value="original-ilustrada">Ilustración original Ecoa (Arte exclusivo)</option>
+    <option value="capas-3d">En capas con relieve 3D / Troquelada</option>
+    <option value="interactiva">Interactiva con elementos móviles (Desplegable)</option>
+    <option value="minimalista">Minimalista botánica clásica</option>
+    <option value="personalizado">Personalizado</option>
+  </select>
+</div>
+  <div class="form-group">
+   <label for="tipo-papel">7. Tipo de papel ecológico:</label>
+  <select name="tipo-papel" id="tipo-papel">
+    <option value="eco-cana">Eco Caña de Azúcar (Suave tono crema - 90g)</option>
+    <option value="reciclado-post">100% Reciclado con Textura Natural (90g)</option>
+    <option value="kraft">Kraft Vintage Reciclado (120g)</option>
+    <option value="artesanal">Papel Hecho a Mano / Fibras Naturales</option>
+    <option value="algodon-acuarela">Algodón Reciclado para Acuarela / Arte (300g)</option>
+  </select> 
+ </div>
+ <div class="form-group">
+  <label for="gama-color">8. Gama de color de las hojas:</label>
+  <select name="gama-color-hojas" id="gama-color-hojas">
+    <option value="pastel">Tonos Pastel (Suaves y delicados)</option>
+    <option value="tierra">Tonos Tierra / Vintage (Cálidos y orgánicos)</option>
+    <option value="retro">Tonos Retro / Envejecidos (Estilo nostálgico)</option>
+    <option value="vivos">Tonos Vivos / Intensos (Energéticos)</option>
+    <option value="neutros">Tonos Neutros (Elegantes y minimalistas)</option>
+    <option value="personalizado">Personalizado</option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="hojas">9. Tipo de hojas:</label>
   <select name="hojas" id="hojas">
-    <option value="punteadas">punteadas (Bullet Journal)</option>
+    <option value="punteadas">Punteadas (Bullet Journal)</option>
     <option value="rayadas">Rayadas</option>
     <option value="lisas">Lisas / Blancas</option>
     <option value="cuadriculadas">Cuadriculadas</option>
-  </select>
-  <div class="form-group">
-  <label for="encuadernado">3. Tipo de encuadernado:</label>
-  <select name="encuadernado" id="encuadernado">
-    <option value="cosido">Cosido</option>
-    <option value="argollado">Argollado</option>
-    <option value="grapado"> Grapado</option>
+    <option value="organizadores">Organizadores (Planner interior)</option>
+    <option value="personalizado">Personalizado</option>
   </select>
 </div>
+<div class="form-group">
+  <label for="decoracion-hojas">10. Detalle o decoración de las hojas:</label>
+  <select name="decoracion-hojas" id="decoracion-hojas">
+    <option value="ninguna">Minimalista (Sin decoración interior)</option>
+    <option value="botanico">Ilustraciones botánicas sutiles en esquinas</option>
+    <option value="envejecido">Bordes estilo vintage / pergamino</option>
+    <option value="filigrana">Sello de agua / Logo Ecoa sutil de fondo</option>
+    <option value="petalos">Con inclusiones de fibras o pétalos naturales</option>
+    <option value="personalizado">Personalizado</option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="encuadernado">11. Tipo de encuadernado:</label>
+  <select name="encuadernado" id="encuadernado">
+    <option value="cosido">Cosido Artesanal </option>
+    <option value="pegado">pegado</option>
+    <option value="argollado">Argollado Doble Anillo</option>
+    <option value="personalizado">Personalizado</option>
+  </select>
+</div>
+<div class="form-group">
+  <label for="accesorio-extra">12. Detalles y accesorios extra:</label>
+  <select name="accesorio-extra" id="accesorio-extra">
+    <option value="ninguno">Sin accesorios extra (Minimalista)</option>
+    <option value="elastico">Banda elástica de cierre</option>
+    <option value="marcapaginas">Cinta marcapáginas de tela</option>
+    <option value="bolsillo">Bolsillo interior portadocumentos</option>
+    <option value="cordon-vintage">Cierre rústico con botón y cordón de yute</option>
+    <option value="personalizado">Personalizado</option>
+  </select>
+</div>
+
 <button type="button" id="btn-cotizar" class="btn-secundary">Calcular precio</button>
 </form>
 

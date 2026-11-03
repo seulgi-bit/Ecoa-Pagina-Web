@@ -110,25 +110,12 @@ html {
   justify-content: center;
 
   /* Agrega esto para darle altura y espacio a la sección */
-  min-height: 80vh;
+  min-height: 100vh;
   /* Ocupa el 80% de la altura de la pantalla */
   padding: 4rem 2rem;
   width: 100%;
 }
 
-/* background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaecoa2.jpeg');
-  color: var(--color-blanco);
-  font: size 15px;
-  background-size: cover;       
-  background-position: center;  
-  background-repeat: no-repeat;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 4rem 2rem;
-  min-height: 400px; 
-}
 /*boton de crea tu libreta inico.html*/
 .btn-primary {
   font-family: var(--fuente-principal);
@@ -172,14 +159,6 @@ body {
   line-height: 1.6;
 }
 
-/*
-main{
-  flex: 1;
-  padding: 3rem 1.5rem;
-  max-width: 1100px;
-  margin: 0 auto;
-  width: 100%;
-}*/
 
 /*todos los titulos h2 modificados*/
 h2 {
@@ -192,7 +171,7 @@ h2 {
 
 /*logo sobreecoa.html*/
 .img-logo {
-  max-width: 40%;
+  max-width: 30%;
   height: auto;
   display: block;
   margin: 15px auto;
@@ -215,21 +194,30 @@ h5 {
   text-align: center;
   font-size: 1.3em;
 }
-.plan-negocios{
-  display: flex;             /* Alinea los hijos en horizontal */
-    flex-direction: row;       /* Mantiene la dirección de izquierda a derecha */
-    justify-content: center;   /* Centra las tarjetas en la pantalla */
-    gap: 20px;                 /* Espacio uniforme entre cada tarjeta */
-    flex-wrap: wrap;           /* Permite que bajen si la pantalla es muy pequeña (para celulares) */
-    
-    padding-top: 5%;
-    margin: 5%;
-    text-align: justify;
+
+.plan-negocios {
+  display: flex;
+  /* Alinea los hijos en horizontal */
+  flex-direction: row;
+  /* Mantiene la dirección de izquierda a derecha */
+  justify-content: center;
+  /* Centra las tarjetas en la pantalla */
+  gap: 20px;
+  /* Espacio uniforme entre cada tarjeta */
+  flex-wrap: wrap;
+  /* Permite que bajen si la pantalla es muy pequeña (para celulares) */
+
+  padding-top: 5%;
+  margin: 5%;
+  text-align: justify;
 
 }
+
 .text-plan {
-  flex: 1;                    /* Hace que todas las tarjetas midan el mismo ancho */
-  max-width: 350px;           /* Limita el ancho máximo para que no se estiren demasiado */
+  flex: 1;
+  /* Hace que todas las tarjetas midan el mismo ancho */
+  max-width: 350px;
+  /* Limita el ancho máximo para que no se estiren demasiado */
   border: 2px solid var(--color-fondo);
   background-color: #c8a5ecd6;
   border-radius: 15px;
@@ -245,20 +233,24 @@ h5 {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   /* Sombra más elegante */
 }
-.titulo-plan{
-  color:var(--color-primario);
+
+.titulo-plan {
+  color: var(--color-primario);
   font-family: var(--fuente-secundaria);
 }
+
 /*titulo de porque escojer ecoa*/
-.titulo-sobre{
-  color:#ddd652ce;
+.titulo-sobre {
+  color: #ddd652ce;
 }
+
 /*texto sobreecoa*/
 .sobreecoa {
   padding-top: 5%;
   margin: 5%;
   text-align: justify;
 }
+
 /*texto de porque elegir ecoa*/
 .text-sobreecoa {
   text-align: center;
@@ -286,25 +278,29 @@ h3 {
   text-align: center;
   margin-top: 2rem;
 }
+
 /*texto de las features-grid de ecoa*/
-.features-reciclado{
-font-family: var(--fuente-secundaria);
-font-weight: 700;
-color: #0c852a;
-text-align: center;
-}
-.features-personalizado{
+.features-reciclado {
   font-family: var(--fuente-secundaria);
-font-weight: 700;
-color: #a4920a;
-text-align: center;
+  font-weight: 700;
+  color: #0c852a;
+  text-align: center;
 }
-.features-conamor{
+
+.features-personalizado {
   font-family: var(--fuente-secundaria);
-font-weight: 700;
-color: #850c5b;
-text-align: center;
+  font-weight: 700;
+  color: #a4920a;
+  text-align: center;
 }
+
+.features-conamor {
+  font-family: var(--fuente-secundaria);
+  font-weight: 700;
+  color: #850c5b;
+  text-align: center;
+}
+
 /*titulo de eco-friendly de sobreecoa.html*/
 .reciclado {
   border: 2px solid rgb(158, 213, 158);
@@ -355,6 +351,7 @@ text-align: center;
   border: 2px solid #e79bc1;
   transform: translateY(-8px)
 }
+
 /*titulos en h4 y los titulos de los productos en catalogo.html*/
 h4 {
   color: var(--color-subtitulos);
@@ -387,7 +384,7 @@ h4 {
   transition: transform 0.3s ease;
 }
 
-/* para que las imagenes al pasarle el mouse se muevan cataolog.html*/
+/* para que las imagenes al pasarle el mouse se muevan catalogo.html*/
 img:hover {
   transform: translateY(-8px);
 }
@@ -446,7 +443,7 @@ img:hover {
   justify-content: center;
 
   /* Agrega esto para darle altura y espacio a la sección */
-  min-height: 80vh;
+  min-height: 100vh;
   /* Ocupa el 80% de la altura de la pantalla */
   padding: 4rem 2rem;
   width: 100%;
@@ -454,10 +451,11 @@ img:hover {
   padding-top: 5%;
   margin: 0%;
 }
-.personaliz{
+
+.personaliz {
   text-align: center;
   font-size: 1.5rem;
-  color:var(--color-blanco)
+  color: var(--color-blanco)
 }
 
 /*formulario para personalizar personalizar.html*/
@@ -466,7 +464,8 @@ img:hover {
   background-color: var(--color-secundario);
   padding: 20px;
   border-radius: 15px;
-  max-width: 400px;
+  width: 100%;
+  max-width: 500px;
   margin: 0 auto;
 }
 
@@ -477,12 +476,14 @@ img:hover {
   flex-direction: column;
   gap: 5px;
 }
+
 /*texto encima de la casilla*/
 .form-group label {
   font-weight: bold;
   color: var(--color-primario);
   font-size: 1.3rem;
 }
+
 /*letra dentro de la casilla*/
 .form-group select {
   width: 100%;
@@ -493,6 +494,7 @@ img:hover {
   box-sizing: border-box;
   outline: none;
 }
+
 /*boton de calcular precio personalizar.html*/
 #btn-cotizar {
   text-decoration: none;
@@ -513,17 +515,23 @@ img:hover {
   cursor: pointer;
   border: 2px solid var(--color-accento);
 }
+
 /* Estilo para la casilla donde se muestra el resultado */
 #resultado-cotizacion {
   margin-top: 20px;
   padding: 15px 20px;
-  background-color: rgba(255, 255, 255, 0.85); /* Fondo blanco semitransparente */
-  border: 2px solid #b8a9c9; /* Un borde punteado con tono pastel/lila */
-  border-radius: 10px; /* Bordes redondeados suaves */
+  background-color: rgba(255, 255, 255, 0.85);
+  /* Fondo blanco semitransparente */
+  border: 2px solid #b8a9c9;
+  /* Un borde punteado con tono pastel/lila */
+  border-radius: 10px;
+  /* Bordes redondeados suaves */
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  color: var(--color-subtitulos); /* Tono verde oscuro acorde a tu marca */
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05); /* Sombra muy sutil */
+  color: var(--color-subtitulos);
+  /* Tono verde oscuro acorde a tu marca */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  /* Sombra muy sutil */
 }
 
 /* Estilos para los textos internos si los generas con HTML */
@@ -611,7 +619,7 @@ img:hover {
 
 /* Estilos específicos para la página de login.html */
 .login-container {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaecoa.jpeg');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaEcoa3.jfif');
   display: flex;
   justify-content: center;
   align-items: center;
@@ -620,13 +628,17 @@ img:hover {
 }
 
 .login-card {
-position: relative;             /* Permite ubicar la flecha en la esquina superior */
+  position: relative;
+  /* Permite ubicar la flecha en la esquina superior */
   max-width: 400px;
-  margin: 50px auto;              /* Centra la tarjeta horizontalmente */
+  margin: 50px auto;
+  /* Centra la tarjeta horizontalmente */
   padding: 35px 30px;
-  background-color: #a87bf7;      /* Color morado pastel de fondo */
+  background-color: #a87bf7;
+  /* Color morado pastel de fondo */
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15); /* Sombra elegante */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  /* Sombra elegante */
   text-align: center;
 
   background-color: var(--color-accento);
@@ -637,6 +649,7 @@ position: relative;             /* Permite ubicar la flecha en la esquina superi
   max-width: 400px;
   text-align: center;
 }
+
 .btn-back {
   position: absolute;
   top: 15px;
@@ -652,8 +665,10 @@ position: relative;             /* Permite ubicar la flecha en la esquina superi
 }
 
 .btn-back:hover {
-  transform: translateX(-4px);    /* Se mueve sutilmente a la izquierda */
-  color: #e4cf79;                 /* Cambia a tono dorado o primario */
+  transform: translateX(-4px);
+  /* Se mueve sutilmente a la izquierda */
+  color: #e4cf79;
+  /* Cambia a tono dorado o primario */
 }
 
 .login-card h1 {
@@ -664,6 +679,7 @@ position: relative;             /* Permite ubicar la flecha en la esquina superi
   text-align: center;
   font-family: var(--fuente-secundaria);
 }
+
 /*texto debajo de inicio de sesion*/
 .login-card p {
   color: var(--color-blanco);
@@ -677,6 +693,7 @@ position: relative;             /* Permite ubicar la flecha en la esquina superi
   border: radius 15px;
   ;
 }
+
 .login-card input {
   width: 100%;
   border-radius: 10px;
@@ -687,9 +704,11 @@ position: relative;             /* Permite ubicar la flecha en la esquina superi
   box-sizing: border-box;
   transition: border-color 0.3s ease;
 }
+
 .login-card input:focus {
   border-color: #8c82e9;
 }
+
 .forgot-pass {
   display: block;
   text-align: center;
@@ -699,14 +718,17 @@ position: relative;             /* Permite ubicar la flecha en la esquina superi
   margin-bottom: 1.2rem;
 
 }
+
 .forgot-pass:hover {
   text-decoration: underline;
-  
+
 }
+
 .btn-entrar {
   width: 100%;
   padding: 12px;
-  background-color: #a3e6be;       /* Verde pastel acorde a Ecoa */
+  background-color: #a3e6be;
+  /* Verde pastel acorde a Ecoa */
   color: #8c58de;
   border: none;
   border-radius: 12px;
@@ -715,35 +737,42 @@ position: relative;             /* Permite ubicar la flecha en la esquina superi
   cursor: pointer;
   transition: background-color 0.3s ease, transform 0.2s ease;
 }
+
 .btn-entrar:hover {
   color: var(--color-terciario);
-  background-color:var(--color-primario);
+  background-color: var(--color-primario);
   transform: translateY(-2px);
 }
+
 .login-footer {
   margin-top: 1.5rem;
   font-size: 0.9rem;
   color: #ffffff;
 }
+
 .login-footer a {
   color: #ffffff;
   font-weight: bold;
   text-decoration: underline;
 }
+
 .login-card button {
   width: 100%;
   margin-top: 1rem;
   font-size: rem;
 }
+
 .login-card label {
-  display:block;
+  display: block;
   font-weight: bold;
   color: var(--color-primario);
   font-size: 1.3rem;
   margin-bottom: 5px;
-  width: 90%;          /* Hace que sea adaptable */
-    max-width: 400px;    /* <-- ¡Aquí cambias el ancho máximo! */
-    margin: 0 auto;
+  width: 90%;
+  /* Hace que sea adaptable */
+  max-width: 400px;
+  /* <-- ¡Aquí cambias el ancho máximo! */
+  margin: 0 auto;
 }
 
 .error-msg {
@@ -751,8 +780,9 @@ position: relative;             /* Permite ubicar la flecha en la esquina superi
   font-size: 0.85rem;
   margin-top: 1rem;
 }
-.login-body{
-background-image:linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaecoa.jpeg'); 
+
+.login-body {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaEcoa3.jfif');
 }
 
 
@@ -778,6 +808,7 @@ footer {
   border-top-right-radius: 20px;
   /* Empuja el footer hacia abajo si usas flexbox en el body */
 }
+
 /*la barra de scroll*/
 ::-webkit-scrollbar {
   width: 9px;

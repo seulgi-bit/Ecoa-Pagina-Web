@@ -42,18 +42,18 @@ const server = http.createServer((request, response) => {
       response.end(content, 'utf-8');
     }
   });
-});
-
-server.listen(3000, () => {
-  console.log('Servidor ejecutándose en http://localhost:3000');
 });*/
+
 const express = require('express');
+const path = require('path');
 const app = express();
+const PORT = 1111;
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'inicio.html')); // Cambia 'inicio.html' por el archivo que quieras mostrar
+});
+// Como tus archivos HTML están sueltos en la carpeta del proyecto, usa esto:
+app.use(express.static(path.join(__dirname)));
 
-app.get('/',(request,response)=>{
-
-response.send('ECOA')
-})
-app.listen(3000, () =>{
-  console.log('Servidor ejecutandose en')
-} )
+app.listen(PORT, () => {
+  console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
+});
