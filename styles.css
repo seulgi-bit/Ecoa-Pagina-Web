@@ -24,40 +24,104 @@ html {
   scroll-behavior: smooth;
 }
 
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+  /* Elimina cualquier barra de scroll horizontal */
+}
+
+/* Por defecto, el botón hamburguesa está oculto en pantallas grandes (PC) */
+.btn-menu {
+  display: none;
+  background: transparent;
+  border: none;
+  font-size: 1.8rem;
+  color: var(--color-secundario);
+  cursor: pointer;
+  padding: 5px;
+}
+
+/* --- ESTILOS PARA MÓVILES (Pantallas menores a 768px) --- */
+@media (max-width: 768px) {
+
+  /* 1. Mostramos el botón hamburguesa en celulares */
+  .btn-menu {
+    display: block;
+  }
+
+  /* 2. Ocultamos el menú de navegación horizontal por defecto en móviles */
+  #navmenu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    /* Debajo de tu banner */
+    left: 0;
+    width: 100%;
+    background-color: var(--color-primario);
+    padding: 1.5rem 0;
+    gap: 1rem;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /* 3. Clase dinámica que activará el JavaScript para mostrar el menú */
+  #navmenu.activo {
+    display: flex;
+  }
+}
+
 /*banner de la parte de arriba,que aparece en todas las pestañas*/
 .banner {
   background-color: var(--color-primario);
   position: fixed;
-  z-index: 10;
-  width: 100%;
-  height: auto;
-  left: 0%;
   top: 0%;
-  box-sizing: border-box;
+  left: 0%;
+  width: 100%;
+  height: 70px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 5%;
+  padding: 0 4rem;
+  box-sizing: border-box;
+  z-index: 10;
 }
+
+
 
 /*titulo de la empresa en el banner*/
 .nombre {
   color: var(--color-accento);
-  font-size: 1.0rem;
+  font-size: 1.8rem;
   text-align: left;
-  padding: 0%;
-  margin: 0%;
+  margin: 0;
   font-family: var(--fuente-principal);
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 
+/* Quitamos márgenes extras del título para que queden pegaditos */
+.nombre h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+.logo {
+  height: 40px;
+  /* Ajusta esta altura al tamaño que más te guste */
+  width: auto;
+  /* Mantiene la proporción de la imagen sin deformarla */
+  object-fit: contain;
+}
 /*enlaces del banner y distribucion*/
 #navmenu {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  gap: 1rem;
-  margin: 0%;
-  width: 100%
+  gap: 1.8rem;
+
 }
 
 /*para acomodar cada enlace*/
@@ -66,8 +130,10 @@ html {
   /*quita la raya azul de los enlaces por defecto*/
   color: var(--color-secundario);
   white-space: nowrap;
-  font-size: 1.2rem;
+  font-size: 1.5rem;
+  font-weight: 500;
   word-spacing: normal;
+  transition: color 0.3s ease;
 }
 
 /*para que cambie de color al pasar el mouse o oprimirlo*/
@@ -85,6 +151,7 @@ html {
 .titulo {
   color: var(--color-accento);
   text-align: center;
+  font-size: 3rem;
 }
 
 /*texto abajo del titulo de la portada*/
@@ -92,6 +159,7 @@ html {
   text-align: center;
   color: var(--color-blanco);
   font-weight: 800;
+  font-size: 1.5rem;
   font-family: var(--fuente-principal);
 }
 
@@ -120,6 +188,7 @@ html {
 .btn-primary {
   font-family: var(--fuente-principal);
   font-weight: 500;
+  font-size: 1.2rem;
   text-decoration: none;
   background-color: var(--color-secundario);
   color: #6818b4;
@@ -158,17 +227,15 @@ body {
   z-index: 1;
   line-height: 1.6;
 }
-
-
 /*todos los titulos h2 modificados*/
 h2 {
   color: #ad87ea;
-  font-size: 2rem;
+  font-size: 3rem;
   text-align: center;
   font-weight: 1000;
+  padding: 1rem 0;
   font-family: var(--fuente-principal);
 }
-
 /*logo sobreecoa.html*/
 .img-logo {
   max-width: 30%;
@@ -185,7 +252,6 @@ h5 {
   text-decoration: underline;
   text-align: center;
   color: var(--color-terciario);
-
   font-size: 1.8rem;
 }
 
@@ -198,69 +264,62 @@ h5 {
 .plan-negocios {
   display: flex;
   /* Alinea los hijos en horizontal */
-  flex-direction: row;
-  /* Mantiene la dirección de izquierda a derecha */
   justify-content: center;
   /* Centra las tarjetas en la pantalla */
-  gap: 20px;
+  align-items: stretch;
+  gap: 2rem;
   /* Espacio uniforme entre cada tarjeta */
   flex-wrap: wrap;
   /* Permite que bajen si la pantalla es muy pequeña (para celulares) */
-
-  padding-top: 5%;
-  margin: 5%;
-  text-align: justify;
-
+  padding-top: 2rem 1rem;
+  margin: 0 auto;
+  max-width: 1200px;
 }
-
 .text-plan {
   flex: 1;
-  /* Hace que todas las tarjetas midan el mismo ancho */
+  min-width: 280px;
   max-width: 350px;
-  /* Limita el ancho máximo para que no se estiren demasiado */
   border: 2px solid var(--color-fondo);
   background-color: #c8a5ecd6;
   border-radius: 15px;
-  border-color: #8050ea;
-  margin-bottom: 25px;
-  padding: 20px;
+  padding: 25px;
+  box-shadow:0 4px 15px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display:flex;
+  flex-direction:column;
+  justify-content: flex-start;
 }
-
 .text-plan:hover {
   transform: translateY(-8px);
   /* Negativo para que suba */
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   /* Sombra más elegante */
 }
-
 .titulo-plan {
   color: var(--color-primario);
   font-family: var(--fuente-secundaria);
 }
-
 /*titulo de porque escojer ecoa*/
 .titulo-sobre {
-  color: #ddd652ce;
+  color: #2c5f68ce;
 }
-
 /*texto sobreecoa*/
 .sobreecoa {
   padding-top: 5%;
   margin: 5%;
   text-align: justify;
 }
-
 /*texto de porque elegir ecoa*/
 .text-sobreecoa {
-  text-align: center;
-  border: 2px solid var(--color-fondo);
-  background-color: #e8e4aab6;
-  border-radius: 15px;
-  border-color: #e4cf79;
-  margin-bottom: 25px;
-  padding: 20px;
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 800px;             /* Limita el ancho para que la lectura sea cómoda */
+    margin: 0 auto 20px auto;     /* Centra las cajas horizontalmente */
+    text-align: center;           /* Centra el texto */
+    border: 2px solid var(--color-fondo);
+    background-color: var(--color-fondo);
+    border-radius: 12px;
+    padding: 20px 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .text-sobreecoa:hover {
@@ -269,7 +328,6 @@ h5 {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
   /* Sombra más elegante */
 }
-
 /*titulos h3 modificados,titulos de sobreecoa.html*/
 h3 {
   color: var(--color-subtitulos);

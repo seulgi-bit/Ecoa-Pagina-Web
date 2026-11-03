@@ -14,29 +14,38 @@
   <link rel="stylesheet" href="styles.css">
   </head>
   <body>
-    
-<div class="banner">
-    <header class="header">
-      <button id="btn-menu" class="btn-menu"><i class="fa-solid fa-bars"></i></button>
+   <header class="banner">
       <div class="nombre">
         <h1>Ecoa</h1>
+        <img src="./assets/img/logosoloecoa.png" alt="Logo de Ecoa" class="logo">
       </div>
+      <button id="btn-menu" class="btn-menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
       <nav id="navmenu" class="nav">
           <a href="./inicio.html">Inicio</a>
           <a href="./sobreecoa.html">Sobre Ecoa</a>
           <a href="./catalogo.html">Catalogo</a>
           <a href="./personalizar.html">Personalizar</a>
-          <a href="./contacto.html">Contacto</a>
+          <a href="./contacto.html">Contacto</a> 
           <a href="./login.html">Iniciar sesion</a>
         </nav>
-    </header>
-  </div>
+    </header> 
   <main>
+
 <div id="nosotros" class="sobreecoa">
+  <div class="card-quienes">
   <h2>¿Quienes Somos?</h2> 
-  <img class="img-logo" src="./assets/img/logocompleto.jpeg" alt="Logo-Ecoa">
-   <h5>"Corazon de papel, Alma de bosque"</h5> 
-   <p class="subtitule">Marca de libretas y sketchbooks 100% artesanales, recicladas y personalizables.</p>
+    <div class="card-quienes">
+    <img class="img-logo" src="./assets/img/logocompleto.jpeg" alt="Logo-Ecoa">
+    <div class="quienes-texto"> 
+    <h5>"Corazon de papel, Alma de bosque"</h5> 
+    <p class="subtitule">Marca de libretas y sketchbooks 100% artesanales, recicladas y personalizables.</p>
+    </div>
+ </div> 
+</div>
+
    <section class="plan-negocios">
     <div class="text-plan">
   <h3 class="titulo-plan">Propuesta de valor:</h3>
@@ -85,5 +94,6 @@
   <p >&copy; 2026 Ecoa.Todos los derechos reservados.</p>
 </footer>
 </div>
+<script src="script.js"></script>
 </body>
 </html>

@@ -48,13 +48,13 @@ const precios = {
   "margen-Portada": {
     "sin-margen": 0,
     botanico: 3000,
-    vintaje: 4000,
+    vintage: 4000,
     geometrico: 2000,
     personalizado: 5000
   },
   "portada-Animada": {
-    "original-ilustrada": 25000,
-    "capas-3d": 35000,
+    "original-ilustrada": 35000,
+    "capas-3d": 25000,
     interactiva: 20000,
     minimalista: 10000,
     personalizado: 15500
@@ -64,13 +64,13 @@ const precios = {
     "eco-cana": 2000,
     "reciclado-post": 1500,
     kraft: 2500,
-    artesanal: 4000,
-    "algodon-acuarela": 5000
+    artesanal: 5500,
+    "algodon-acuarela": 6500
   },
   "gama-Color-Hojas": {
     pastel: 1000,
     tierra: 1500,
-    retro: 1200,
+    retro: 2200,
     vivos: 2000,
     neutros: 800,
     personalizado: 2500
@@ -125,7 +125,7 @@ function calcularPrecio() {
   const hojasSeleccionadas = selectHojas.value;
   const decoracionHojasSeleccionada = selectDecoracionHojas.value;
   const encuadernadoSeleccionado = selectEncuadernado.value;
-  const accesorioextraSeleccionado = selectAccesorioextra.value;
+  const accesorioExtraSeleccionado = selectAccesorioextra.value;
 
   // Buscamos los costos en el objeto
   const costoFormato = precios.formato[formatoSeleccionado] || 0;
