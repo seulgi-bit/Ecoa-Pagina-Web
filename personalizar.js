@@ -170,9 +170,68 @@ function calcularPrecio() {
           </p>
         </div>
     `;
+  return precioTotal;
 }
 
 // 4. Asignamos el evento de clic al botón
 if (btnCotizar) {
   btnCotizar.addEventListener('click', calcularPrecio);
+}
+
+const btnAgregarCarrito = document.getElementById('btn-agregar-carrito');
+if (btnAgregarCarrito) {
+  btnAgregarCarrito.addEventListener('click', () => {
+    const precio = calcularPrecio();
+    const opciones = [
+      ['Formato', selectFormato],
+      ['Tamaño', selectTamaño],
+      ['Portada', selecttipoPortada],
+      ['Color de portada', selectGamaColorPortada],
+      ['Margen', selectMargenPortada],
+      ['Ilustración', selectPortadaAnimada],
+      ['Papel', selectTipoPapel],
+      ['Color de hojas', selectGamaColorHojas],
+      ['Hojas', selectHojas],
+      ['Decoración', selectDecoracionHojas],
+      ['Encuadernado', selectEncuadernado],
+      ['Accesorio', selectAccesorioextra]
+    ];
+    const configuracion = opciones.map(([, selector]) => selector.value);
+    const detalles = opciones
+      .map(([nombre, selector]) => `${nombre}: ${selector.selectedOptions[0].textContent.trim()}`)
+      .join(' | ');
+
+    let carrito;
+    try {
+      carrito = JSON.parse(localStorage.getItem('carritoEcoa') || '[]');
+    } catch (error) {
+      console.error('No se pudo leer el carrito guardado.', error);
+      alert('No se pudo cargar el carrito. Inténtalo de nuevo.');
+      return;
+    }
+
+    if (!Array.isArray(carrito)) {
+      console.error('Los datos guardados del carrito no tienen el formato esperado.');
+      alert('No se pudo cargar el carrito. Revisa los datos guardados e inténtalo de nuevo.');
+      return;
+    }
+
+    const id = `personalizada-${configuracion.join('|')}`;
+    const existente = carrito.find(producto => producto.id === id);
+    if (existente) {
+      existente.cantidad = (Number(existente.cantidad) || 1) + 1;
+    } else {
+      carrito.push({
+        id,
+        titulo: 'Libreta personalizada Ecoa',
+        imagen: './assets/img/logocompleto.jpeg',
+        precio,
+        detalles,
+        cantidad: 1
+      });
+    }
+
+    localStorage.setItem('carritoEcoa', JSON.stringify(carrito));
+    window.location.href = 'carrito.html';
+  });
 }

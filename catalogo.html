@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Ecoa | Alma de bosque </title>
+   <title>Ecoa | Catalogo</title>
    <link rel="icon" href="assets/img/logoecoa.png" type="image/png">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,65 +24,97 @@
         <i class="fa-solid fa-bars"></i>
       </button>
 
-      <nav id="navmenu" class="nav">
+     <nav id="navmenu" class="nav">
           <a href="./inicio.html">Inicio</a>
           <a href="./sobreecoa.html">Sobre Ecoa</a>
           <a href="./catalogo.html">Catalogo</a>
           <a href="./personalizar.html">Personalizar</a>
           <a href="./contacto.html">Contacto</a> 
-          <a href="./login.html">Iniciar sesion</a>
-        </nav>
+          <a href="carrito.html" class="btn-carrito">
+        <img src="./assets/img/icon-carrito.png" alt="Carrito de compras">
+          </a>
+        </nav> 
+        <div class="btn-login-container">
+          <a href="./login.html" class="btn-login" id="btn-login">Iniciar sesion</a>
+          </div>
     </header>
 
-  <main>
-<section id="productos" class="catalogo">
-  <h2> Nuestras libretas</h2>
-  <div class="productos">
-    <div class="product-card">
-       <h4>Tamaño A6</h4>
-       <img class="img-productos" src="assets/img/libretabolsillo_A6.png" alt="Libreta de bolsillo">
-      <p>(Bolsillo / 10.5 x 14.8 cm) Pequeña, compacta, pensada para llevar siempre encima y anotar ideas rápidas.</p>
-      <span class="price">$ 10.000</span>
-    </div>
+ <main>
+    <section id="productos" class="catalogo">
+        <h2>Nuestras Libretas</h2>
+        
+        <div class="productos">
 
-    <div class="product-card">
-     <h4 >Tamaño A5</h4>
-     <img class="img-productos" src="assets/img/libreta-A5.png"alt="Libreta tamaño A5">
-     <p>(Mediano / 14.8 x 21 cm) El rey indiscutible. Es el equilibrio perfecto entre espacio para escribir y portabilidad (cabe en cualquier bolso o mochila).</p>
-     <span class="price">$15.000</span>
-    </div>
-    
-    <div class="product-card">
-      <h4>Sketchbook Eco</h4>
-      <img class="img-productos" src="assets/img/sketchbook.png" alt="Sketchbook">
-      <p>(15 x 15 cm)Hojas gruesas especiales para dibujo y bocetos.</p>
-      <span class="price">$20.000</span>
+            <!-- Tarjeta 1 -->
+            <div class="product-card">
+                <h4>Tamaño A6</h4>
+                <img class="img-productos" src="assets/img/libretabolsillo_A6.png" alt="Libreta de bolsillo">
+                <p>(Bolsillo / 10.5 x 14.8 cm) Pequeña, compacta, pensada para llevar siempre encima y anotar ideas rápidas.</p>
+                <div class="card-footer">
+                    <span class="price">$ 10.000</span>
+                    <button class="btn-pedido">Añadir al carrito 🛒</button>
+                </div>
+            </div>
 
-      <div class="product-card">
-      <h4>Formato cuadrado</h4>
-      <img class="img-productos" src="assets/img/libreta cuadrada.jfif" alt="Cuadrada">
-      <p>( 20 x 20 cm)Muy atractiva visualmente, popular para diarios de viaje, álbumes de fotos o cuadernos de dibujo</p>
-      <span class="price">$20.000</span>
+            <!-- Tarjeta 2 -->
+            <div class="product-card">
+                <h4>Tamaño A5</h4>
+                <img class="img-productos" src="assets/img/libreta-A5.png" alt="Libreta tamaño A5">
+                <p>(Mediano / 14.8 x 21 cm) El rey indiscutible. Es el equilibrio perfecto entre espacio para escribir y portabilidad.</p>
+                <div class="card-footer">
+                    <span class="price">$ 15.000</span>
+                    <button class="btn-pedido">Añadir al carrito 🛒</button>
+                </div>
+            </div>
 
+            <!-- Tarjeta 3 -->
+            <div class="product-card">
+                <h4>Sketchbook Eco</h4>
+                <img class="img-productos" src="assets/img/sketchbook.png" alt="Sketchbook">
+                <p>(15 x 15 cm) Hojas gruesas especiales para dibujo y bocetos.</p>
+                <div class="card-footer">
+                    <span class="price">$ 20.000</span>
+                    <button class="btn-pedido">Añadir al carrito 🛒</button>
+                </div>
+            </div>
 
-    <div class="product-card">
-      <h4>Tamaño B5</h4>
-      <img class="img-productos" src="./assets/img/libretauniversitaria.jfif" alt="Libreta universitaria">
-      <p>(Universitario / 17.6 x 25 cm)Más grande, muy buscada por estudiantes universitarios o profesionales que necesitan tomar notas extensas.</p>
-      <span class="price">$25.000</span>
+            <!-- Tarjeta 4 -->
+            <div class="product-card">
+                <h4>Formato Cuadrado</h4>
+                <img class="img-productos" src="assets/img/libreta cuadrada.jfif" alt="Cuadrada">
+                <p>(20 x 20 cm) Muy atractiva visualmente, popular para diarios de viaje, álbumes de fotos o cuadernos de dibujo.</p>
+                <div class="card-footer">
+                    <span class="price">$ 20.000</span>
+                    <button class="btn-pedido">Añadir al carrito 🛒</button>
+                </div>
+            </div>
 
-      <div class="product-card">
-      <h4>Formato Horizontal</h4>
-      <img class="img-productos" src="./assets/img/libretaapaisada.jfif" alt="Libreta apaisada">
-      <p>(Dibujo y Bocetos / 29.7 cm x 21 cm)Las anillas o costura van en el lado corto superior o izquierdo, ideal para creativos y diseñadores</p>
-      <span class="price">$30.000</span>
-    </div>
-  
-    <button class="btn-pedido">Añadir al carrito</button>
-    </div>
-  </div> 
-</section> 
+            <!-- Tarjeta 5 -->
+            <div class="product-card">
+                <h4>Tamaño B5</h4>
+                <img class="img-productos" src="./assets/img/libretauniversitaria.jfif" alt="Libreta universitaria">
+                <p>(Universitario / 17.6 x 25 cm) Más grande, muy buscada por estudiantes universitarios o profesionales.</p>
+                <div class="card-footer">
+                    <span class="price">$ 25.000</span>
+                    <button class="btn-pedido">Añadir al carrito 🛒</button>
+                </div>
+            </div>
+
+            <!-- Tarjeta 6 -->
+            <div class="product-card">
+                <h4>Formato Horizontal</h4>
+                <img class="img-productos" src="./assets/img/libretaapaisada.jfif" alt="Libreta apaisada">
+                <p>(Dibujo y Bocetos / 29.7 cm x 21 cm) Ideal para creativos y diseñadores.</p>
+                <div class="card-footer">
+                    <span class="price">$ 30.000</span>
+                    <button class="btn-pedido">Añadir al carrito 🛒</button>
+                </div>
+            </div>
+
+        </div>
+    </section>
 </main>
+    
 <footer>
   <p >&copy; 2026 Ecoa.Todos los derechos reservados.</p>
 </footer>

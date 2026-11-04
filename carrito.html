@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecoa | Tu Carrito</title>
+    <link rel="icon" href="./assets/img/logoecoa.png" type="image/png">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- BANNER SUPERIOR (Fijo) -->
+     <header class="banner">
+      <div class="nombre">
+        <h1>Ecoa</h1>  
+        <img src="./assets/img/logosoloecoa.png" alt="Logo de Ecoa" class="logo">
+      </div>
+      <button id="btn-menu" class="btn-menu">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+
+      <nav id="navmenu" class="nav">
+          <a href="./inicio.html">Inicio</a>
+          <a href="./sobreecoa.html">Sobre Ecoa</a>
+          <a href="./catalogo.html">Catalogo</a>
+          <a href="./personalizar.html">Personalizar</a>
+          <a href="./contacto.html">Contacto</a> 
+          <a href="carrito.html" class="btn-carrito">
+        <img src="./assets/img/icon-carrito.png" alt="Carrito de compras">
+          </a>
+        </nav> 
+        <div class="btn-login-container">
+          <a href="./login.html" class="btn-login" id="btn-login">Iniciar sesion</a>
+          </div>
+    </header>
+
+    <!-- CONTENIDO PRINCIPAL DEL CARRITO -->
+    <main class="carrito-container">
+        <h2>Tu Carrito de Compras 🌿</h2>
+
+        <div class="carrito-contenido">
+            <div class="carrito-productos" aria-live="polite"></div>
+
+            <div class="carrito-resumen">
+                <h3>Resumen del pedido</h3>
+                <div class="resumen-linea">
+                    <span>Subtotal:</span>
+                    <span id="subtotal-carrito">$ 0 COP</span>
+                </div>
+                <div class="resumen-linea">
+                    <span>Envío estimado (Bogotá):</span>
+                    <span id="envio-carrito">$ 0 COP</span>
+                </div>
+                <hr>
+                <div class="resumen-linea total">
+                    <span>Total:</span>
+                    <span id="total-carrito">$ 0 COP</span>
+                </div>
+
+                <div class="notas-pedido">
+                    <label for="nota">Notas o dedicatoria especial:</label>
+                    <textarea id="nota" placeholder="Escribe aquí si es para un regalo..."></textarea>
+                </div>
+
+                <a href="#" class="btn-pagar">Continuar pedido por WhatsApp 💬</a>
+                <a href="catalogo.html" class="btn-seguir">⬅️ Seguir Comprando</a>
+            </div>
+
+        </div>
+    </main>
+    <script src="script.js"></script>
+<script src="carrito.js"></script>
+</body>
+</html>

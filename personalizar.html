@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Ecoa | Alma de bosque </title>
+   <title>Ecoa | Personalizar</title>
    <link rel="icon" href="assets/img/logoecoa.png" type="image/png">
    <link rel="preconnect" href="https://fonts.googleapis.com">
    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,14 +23,19 @@
         <i class="fa-solid fa-bars"></i>
       </button>
 
-      <nav id="navmenu" class="nav">
+     <nav id="navmenu" class="nav">
           <a href="./inicio.html">Inicio</a>
           <a href="./sobreecoa.html">Sobre Ecoa</a>
           <a href="./catalogo.html">Catalogo</a>
           <a href="./personalizar.html">Personalizar</a>
           <a href="./contacto.html">Contacto</a> 
-          <a href="./login.html">Iniciar sesion</a>
-        </nav>
+          <a href="carrito.html" class="btn-carrito">
+        <img src="./assets/img/icon-carrito.png" alt="Carrito de compras">
+          </a>
+        </nav> 
+        <div class="btn-login-container">
+          <a href="./login.html" class="btn-login" id="btn-login">Iniciar sesion</a>
+          </div>
     </header>
 
 <main>
@@ -162,6 +167,7 @@
 </div>
 
 <button type="button" id="btn-cotizar" class="btn-secundary">Calcular precio</button>
+<button type="button" id="btn-agregar-carrito" class="btn-pedido">Agregar esta libreta al carrito 🛒</button>
 </form>
 
 <div id="resultado-cotizacion" style="margin-top: 15px; font-weight: bold;">
