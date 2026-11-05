@@ -33,8 +33,7 @@ if (formLogin) {
         }
     });
 }
-// Contenido previo que ya tenías en tu proyecto
-// ...
+
 
 // Contenido de añadir al carrito y enviar a WhatsApp
 document.addEventListener('DOMContentLoaded', () => {
