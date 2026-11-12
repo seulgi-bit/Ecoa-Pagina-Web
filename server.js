@@ -1,57 +1,18 @@
-const http = require('http');
-const fs = require('fs');
-const path = require('path');
-
-const server = http.createServer((request, response) => {
-  // Si entran a la raíz ('/'), cargamos 'inicio.html' por defecto
-  let filePath = request.url === '/' ? './inicio.html' : '.' + request.url;
-
-  // Obtenemos la extensión del archivo (html, css, jpg, js, etc.)
-  let extname = path.extname(filePath);
-  let contentType = 'text/html';
-
-  // Definimos los tipos de contenido para que el navegador los entienda bien
-  switch (extname) {
-    case '.css':
-      contentType = 'text/css';
-      break;
-    case '.js':
-      contentType = 'text/javascript';
-      break;
-    case '.jpg':
-    case '.jpeg':
-      contentType = 'image/jpeg';
-      break;
-    case '.png':
-      contentType = 'image/png';
-      break;
-  }
-
-  // Leemos el archivo del proyecto
-  fs.readFile(filePath, (error, content) => {
-    if (error) {
-      if (error.code == 'ENOENT') {
-        response.writeHead(404, { 'Content-Type': 'text/html' });
-        response.end('<h1>404 - Página no encontrada</h1>');
-      } else {
-        response.writeHead(500);
-        response.end('Error interno del servidor: ' + error.code);
-      }
-    } else {
-      response.writeHead(200, { 'Content-Type': contentType });
-      response.end(content, 'utf-8');
-    }
-  });
-});
-//segunda parte del código, usando express para manejar las rutas y el carrito de compras
 const express = require('express');
 const path = require('path');
+const mongoose = require('mongoose');
 const app = express();
 
-app.use(express.json());//la app puede recibir objetos y enviar objetos
+// 1. Configuraciones básicas de Express
+app.use(express.json()); // Permite recibir y enviar objetos JSON
+app.use(express.static(__dirname)); // Sirve automáticamente tus HTML, CSS, JS e imágenes
 
-app.use(express.static(__dirname));
+// 2. CONEXIÓN A MONGODB
+mongoose.connect('mongodb://127.0.0.1:27017/ecoa_db')
+  .then(() => console.log('¡Conectado a MongoDB con éxito! 🍃'))
+  .catch(err => console.error('Error al conectar a MongoDB:', err));
 
+// 3. BASE DE DATOS TEMPORAL (O en memoria mientras configuras los Modelos de Mongoose)
 let productos = [
   { nombre: 'Producto 1', precio: 10, cantidad: 5, imagen: 'img/producto1.jpg' },
   { nombre: 'Producto 2', precio: 20, cantidad: 3, imagen: 'img/producto2.jpg' },
@@ -60,30 +21,32 @@ let productos = [
 
 let carrito = [];
 
+// --- RUTAS DE LA API ---
 
+// Ruta para obtener los productos
 app.get('/productos', (req, res) => {
   res.json(productos);
 });
 
-// 2. Ruta para obtener el carrito
+// Ruta para obtener el carrito
 app.get('/api/carrito', (req, res) => {
   res.json(carrito);
 });
 
-// 3. Ruta para agregar al carrito mediante POST
+// Ruta para agregar al carrito mediante POST
 app.post('/api/carrito', (req, res) => {
   const item = req.body;
   carrito.push(item);
   res.json({ mensaje: "Guardado en el servidor", carrito });
 });
 
-const PORT = 1111;
+// Ruta principal para cargar tu página de inicio por defecto
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'inicio.html')); // Cambia 'inicio.html' por el archivo que quieras mostrar
+  res.sendFile(path.join(__dirname, 'inicio.html'));
 });
-// Como tus archivos HTML están sueltos en la carpeta del proyecto, usa esto:
-app.use(express.static(path.join(__dirname)));
 
+// 4. ENCENDER EL SERVIDOR EN EL PUERTO 1111
+const PORT = 1111;
 app.listen(PORT, () => {
   console.log(`Servidor ejecutándose en http://localhost:${PORT}`);
 });
