@@ -90,8 +90,6 @@ body {
   z-index: 10;
 }
 
-
-
 /*titulo de la empresa en el banner*/
 .nombre {
   color: var(--color-accento);
@@ -118,14 +116,11 @@ body {
   object-fit: contain;
 }
 
-
-
 /*enlaces del banner y distribucion*/
 #navmenu {
   display: flex;
   align-items: center;
   gap: 1.8rem;
-
 }
 
 /*para acomodar cada enlace*/
@@ -164,38 +159,46 @@ body {
   border: 2px solid var(--color-secundario);
   transition: background-color 0.3s ease, color 0.3s ease;
 }
+
 .btn-login:hover {
   background-color: var(--color-primario);
   color: var(--color-blanco);
   cursor: pointer;
   border: 2px solid var(--color-primario);
 }
+
 /* Estilo del botón/contenedor del carrito */
 .btn-carrito {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-decoration: none;
-    font-size: 1.4rem;                /* Tamaño si usas un emoji/icono de texto */
-    padding: 8px;
-    border-radius: 50%;               /* Fondo circular opcional */
-    transition: transform 0.2s ease, background-color 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  font-size: 1.4rem;
+  /* Tamaño si usas un emoji/icono de texto */
+  padding: 8px;
+  border-radius: 50%;
+  /* Fondo circular opcional */
+  transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
 /* EFECTO HOVER: Cambia al pasar el ratón */
 .btn-carrito:hover {
-    transform: scale(1.1);            /* Se agranda levemente al pasar el ratón */
-    background-color: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
+  /* Se agranda levemente al pasar el ratón */
+  background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Si usas una imagen PNG o SVG dentro del carrito */
 .btn-carrito img {
-    width: 24px;                      /* Ancho del icono */
-    height: 24px;                     /* Alto del icono */
-    object-fit: contain;
-    /* Si tu imagen es negra/oscura, esta propiedad la vuelve blanca automáticamente: */
-    filter: brightness(0) invert(1); 
+  width: 24px;
+  /* Ancho del icono */
+  height: 24px;
+  /* Alto del icono */
+  object-fit: contain;
+  /* Si tu imagen es negra/oscura, esta propiedad la vuelve blanca automáticamente: */
+  filter: brightness(0) invert(1);
 }
+
 /*portada inicial de la pagina inicio.html*/
 #inicio {
   padding-top: 10rem;
@@ -269,8 +272,8 @@ body {
 /*cuerpo en plural de la pestaña con banner y texto*/
 body {
   padding-top: 70px;
-  margin: 0%;
-  padding: 0%;
+  /* O el valor que tenías originalmente para tus otras páginas */
+  margin: 0;
   box-sizing: border-box;
   background-color: var(--color-fondo);
   position: relative;
@@ -288,188 +291,134 @@ h2 {
   font-family: var(--fuente-principal);
 }
 
-/*logo sobreecoa.html*/
-.img-logo {
-  max-width: 30%;
-  height: auto;
-  display: block;
-  margin: 15px auto;
-  border-radius: 30px;
-  border: 2px solid var(--color-primario2);
-  transition: transform 0.3s ease;
+body.pagina-sobre-ecoa {
+  background: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)),
+    url('https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1920&q=80');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding-top: 130px !important;
+  /* Empuja el contenido para que el banner no lo tape */
 }
 
-/*texto slogan sobreecoa.html*/
-h5 {
-  text-decoration: underline;
-  text-align: center;
-  color: var(--color-terciario);
-  font-size: 1.8rem;
-}
-
-.subtitule {
-  color: #6b21a8;
-  text-align: center;
-  font-size: 1.3em;
-}
-
-.plan-negocios {
-  display: flex;
-  /* Alinea los hijos en horizontal */
-  justify-content: center;
-  /* Centra las tarjetas en la pantalla */
-  align-items: stretch;
-  gap: 2rem;
-  /* Espacio uniforme entre cada tarjeta */
-  flex-wrap: wrap;
-  /* Permite que bajen si la pantalla es muy pequeña (para celulares) */
-  padding-top: 2rem 1rem;
+/* --- NUEVO DISEÑO LIMPIO Y MODERNO PARA SOBRE ECOA --- */
+.seccion-sobre-ecoa {
+  max-width: 1100px;
   margin: 0 auto;
-  max-width: 1200px;
+  padding: 20px 20px 60px 20px;
 }
 
-.text-plan {
-  flex: 1;
-  min-width: 280px;
-  max-width: 350px;
-  border: 2px solid var(--color-fondo);
-  background-color: #c8a5ecd6;
-  border-radius: 15px;
-  padding: 25px;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+/* 1. Tarjetas Superiores (Propuesta, Misión, Visión) */
+.cards-grid-principales {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 25px;
+  margin-bottom: 60px;
+}
+
+.card-principal {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  border-top: 5px solid #ad87ea;
+  /* Color principal de acento */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
 }
 
-.text-plan:hover {
-  transform: translateY(-8px);
-  /* Negativo para que suba */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  /* Sombra más elegante */
+.card-principal:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(173, 135, 234, 0.15);
 }
 
-.titulo-plan {
-  color: var(--color-primario);
-  font-family: var(--fuente-secundaria);
+.card-principal h3 {
+  color: #ad87ea;
+  font-size: 1.4rem;
+  margin-bottom: 15px;
+  text-align: left;
 }
 
-/*titulo de porque escojer ecoa*/
-.titulo-sobre {
+.card-principal p {
+  color: #4a4a4a;
+  font-size: 0.95rem;
+  line-height: 1.7;
+  text-align: left;
+}
+
+/* 2. Sección central "¿Por qué elegir Ecoa?" */
+.contenedor-por-que {
+  background: #faf8ff;
+  border-radius: 20px;
+  padding: 40px;
+  margin-bottom: 50px;
+  box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+
+.contenedor-por-que h2 {
   color: #2c5f68ce;
+  margin-bottom: 25px;
 }
 
-/*texto sobreecoa*/
-.sobreecoa {
-  padding-top: 5%;
-  margin: 5%;
-  text-align: justify;
-}
-
-/*texto de porque elegir ecoa*/
-.text-sobreecoa {
-  max-width: 800px;
-  /* Limita el ancho para que la lectura sea cómoda */
-  margin: 0 auto 20px auto;
-  /* Centra las cajas horizontalmente */
+.textos-por-que p {
+  color: #555;
+  font-size: 1.05rem;
+  line-height: 1.8;
+  margin-bottom: 20px;
   text-align: center;
-  /* Centra el texto */
-  border: 2px solid var(--color-fondo);
-  background-color: var(--color-fondo);
-  border-radius: 12px;
-  padding: 20px 30px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.04);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.text-sobreecoa:hover {
-  transform: translateY(-8px);
-  /* Negativo para que suba */
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
-  /* Sombra más elegante */
+/* 3. Tarjetas Inferiores (Eco-friendly, Personalizado, Hecho con amor) */
+.features-grid-moderna {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
 }
 
-/*titulos h3 modificados,titulos de sobreecoa.html*/
-h3 {
-  color: var(--color-subtitulos);
-  font-size: 1.5rem;
-  font-family: var(--fuente-principal);
+.feature-card {
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 30px 20px;
   text-align: center;
-  margin-top: 2rem;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  border: 1px solid rgba(0, 0, 0, 0.04);
 }
 
-/*texto de las features-grid de ecoa*/
-.features-reciclado {
-  font-family: var(--fuente-secundaria);
-  font-weight: 700;
-  color: #0c852a;
-  text-align: center;
+.feature-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
 }
 
-.features-personalizado {
-  font-family: var(--fuente-secundaria);
-  font-weight: 700;
-  color: #a4920a;
-  text-align: center;
+.feature-icon {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
 }
 
-.features-conamor {
-  font-family: var(--fuente-secundaria);
-  font-weight: 700;
-  color: #850c5b;
-  text-align: center;
+.feature-card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
 }
 
-/*titulo de eco-friendly de sobreecoa.html*/
-.reciclado {
-  border: 2px solid rgb(158, 213, 158);
-  background-color: rgb(167, 219, 167);
-  border-radius: 15px;
-  padding: 10px;
+.feature-card p {
+  font-size: 0.9rem;
+  color: #666;
+  line-height: 1.5;
 }
 
-/* para que al pasar el mouse en el boton titulo cambie de color*/
-.reciclado:hover {
-  background-color: rgb(212, 248, 212);
-  color: rgb(123, 211, 35);
-  cursor: pointer;
-  border: 2px solid rgb(158, 213, 158);
-  transform: translateY(-8px)
+/* Estilos específicos de acento para cada tarjeta inferior */
+.feature-card.eco h3 {
+  color: #52a352;
 }
 
-/*titulo de diseños personalizados en sobreecoa.html*/
-.personalizados {
-  border: 2px solid rgb(223, 209, 154);
-  background-color: rgb(221, 205, 141);
-  border-radius: 15px;
-  padding: 10px;
+.feature-card.personalizado h3 {
+  color: #d4a337;
 }
 
-/*para que al pasar el mouse cambie de color*/
-.personalizados:hover {
-  background-color: rgb(240, 232, 197);
-  color: rgb(228, 197, 26);
-  cursor: pointer;
-  border: 2px solid rgb(223, 209, 154);
-  transform: translateY(-8px)
-}
-
-/*titulo de hecho con amor sobreecoa.html*/
-.hecho-con-amor {
-  border: 2px solid #e79bc1;
-  background-color: #e79bc1;
-  border-radius: 15px;
-  padding: 10px;
-}
-
-/*para que cambie al pasar el mouse*/
-.hecho-con-amor:hover {
-  background-color: #ebc9da;
-  color: rgb(233, 71, 98);
-  cursor: pointer;
-  border: 2px solid #e79bc1;
-  transform: translateY(-8px)
+.feature-card.amor h3 {
+  color: #e06d8a;
 }
 
 /*titulos en h4 y los titulos de los productos en catalogo.html*/
@@ -485,102 +434,103 @@ h4 {
 /*seccion del catalogo catalogo.html*/
 /* Espaciado general del catálogo */
 .catalogo {
-    padding-top: 90px; /* Para que el banner fijo no lo tape */
-    max-width: 1200px;
-    margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
-    padding-bottom: 40px;
+  padding-top: 90px;
+  /* Para que el banner fijo no lo tape */
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-bottom: 40px;
 }
 
 .catalogo h2 {
-    text-align: center;
-    color: var(--color-primario);
-    font-size: 2.2rem;
-    margin-bottom: 2rem;
-    font-family: var(--fuente-principal);
+  text-align: center;
+  color: var(--color-primario);
+  font-size: 2.2rem;
+  margin-bottom: 2rem;
+  font-family: var(--fuente-principal);
 }
 
 /* Grilla de productos en 3 columnas */
 .productos {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-content: center;
 }
 
 /* Tarjeta de producto individual */
 .product-card {
-    background-color: rgba(255, 255, 255, 0.7);
-    border: 2px solid var(--color-primario);
-    border-radius: 18px;
-    padding: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid var(--color-primario);
+  border-radius: 18px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .product-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  transform: translateY(-8px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 .product-card h4 {
-    color: var(--color-primario);
-    font-size: 1.3rem;
-    margin: 0 0 10px 0;
-    text-align: center;
+  color: var(--color-primario);
+  font-size: 1.3rem;
+  margin: 0 0 10px 0;
+  text-align: center;
 }
 
 .img-productos {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-    border-radius: 12px;
-    margin-bottom: 12px;
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 12px;
 }
 
 .product-card p {
-    font-size: 0.95rem;
-    color: #444;
-    line-height: 1.4;
-    margin-bottom: 15px;
+  font-size: 0.95rem;
+  color: #444;
+  line-height: 1.4;
+  margin-bottom: 15px;
 }
 
 /* Parte inferior de la tarjeta (Precio y Botón) */
 .card-footer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 10px;
-    margin-top: auto;
-    padding-top: 10px;
-    border-top: 1px solid rgba(0,0,0,0.08);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
 }
 
 .price {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: var(--color-terciario);
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--color-terciario);
 }
 
 .btn-pedido {
-    background-color: var(--color-primario);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    padding: 8px 14px;
-    font-size: 0.9rem;
-    cursor: pointer;
-    font-weight: bold;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+  background-color: var(--color-primario);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 14px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.2s ease, transform 0.2s ease;
 }
 
 .btn-pedido:hover {
-    background-color: #8050ea;
-    transform: scale(1.05);
+  background-color: #8050ea;
+  transform: scale(1.05);
 }
 
 /*boton de añadir al carrito*/
@@ -613,7 +563,7 @@ h4 {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('./assets/img/ecoainterior.jfif');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('./assets/img/tienda-ecoa.jfif');
   padding-top: 0%;
   display: flex;
   flex-direction: column;
@@ -792,165 +742,168 @@ h4 {
   cursor: pointer;
   border: 2px solid var(--color-secundario);
 }
+
 /* Estructura general de la página de carrito.html */
 .carrito-container {
-    padding-top: 100px; /* Evita que el banner fijo tape el título */
-    max-width: 1100px;
-    margin: 0 auto;
-    padding-left: 2rem;
-    padding-right: 2rem;
-    padding-bottom: 4rem;
+  padding-top: 100px;
+  /* Evita que el banner fijo tape el título */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 4rem;
 }
 
 .carrito-container h2 {
-    color: var(--color-primario);
-    font-family: var(--fuente-principal);
-    text-align: center;
-    margin-bottom: 2rem;
-    font-size: 2rem;
+  color: var(--color-primario);
+  font-family: var(--fuente-principal);
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
 }
 
 /* Distribución en dos columnas */
 .carrito-contenido {
-    display: flex;
-    gap: 2rem;
-    flex-wrap: wrap;
-    justify-content: space-between;
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  justify-content: space-between;
 }
 
 .carrito-productos {
-    flex: 2;
-    min-width: 300px;
+  flex: 2;
+  min-width: 300px;
 }
 
 .carrito-resumen {
-    flex: 1;
-    min-width: 280px;
-    background-color: rgba(255, 255, 255, 0.7);
-    border: 2px solid var(--color-primario);
-    border-radius: 15px;
-    padding: 2rem;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  flex: 1;
+  min-width: 280px;
+  background-color: rgba(255, 255, 255, 0.7);
+  border: 2px solid var(--color-primario);
+  border-radius: 15px;
+  padding: 2rem;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
 }
 
 /* Tarjeta individual de producto */
 .item-carrito {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-    background-color: rgba(255, 255, 255, 0.6);
-    border: 1px solid var(--color-primario);
-    border-radius: 12px;
-    padding: 1rem;
-    margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  background-color: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--color-primario);
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
 }
 
 .item-carrito img {
-    width: 70px;
-    height: 70px;
-    object-fit: cover;
-    border-radius: 8px;
+  width: 70px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
 }
 
 .item-detalles h3 {
-    font-size: 1.1rem;
-    color: var(--color-primario);
-    margin: 0 0 5px 0;
+  font-size: 1.1rem;
+  color: var(--color-primario);
+  margin: 0 0 5px 0;
 }
 
 .item-detalles p {
-    font-size: 0.9rem;
-    color: #555;
-    margin: 0 0 5px 0;
+  font-size: 0.9rem;
+  color: #555;
+  margin: 0 0 5px 0;
 }
 
 .precio {
-    font-weight: bold;
-    color: var(--color-terciario);
+  font-weight: bold;
+  color: var(--color-terciario);
 }
 
 /* Botones de cantidad y acciones */
 .item-cantidad {
-    display: flex;
-    align-items: center;
-    gap: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .item-cantidad button {
-    background-color: var(--color-primario);
-    color: white;
-    border: none;
-    width: 25px;
-    height: 25px;
-    border-radius: 4px;
-    cursor: pointer;
+  background-color: var(--color-primario);
+  color: white;
+  border: none;
+  width: 25px;
+  height: 25px;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
 .btn-eliminar {
-    background: none;
-    border: none;
-    cursor: pointer;
-    font-size: 1.2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
 }
 
 /* Resumen y botones de pago */
 .resumen-linea {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 1rem;
-    font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  font-size: 1rem;
 }
 
 .resumen-linea.total {
-    font-weight: bold;
-    font-size: 1.2rem;
-    color: var(--color-primario);
+  font-weight: bold;
+  font-size: 1.2rem;
+  color: var(--color-primario);
 }
 
 .notas-pedido {
-    margin: 1.5rem 0;
+  margin: 1.5rem 0;
 }
 
 .notas-pedido label {
-    display: block;
-    font-size: 0.9rem;
-    margin-bottom: 5px;
-    color: #444;
+  display: block;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+  color: #444;
 }
 
 .notas-pedido textarea {
-    width: 100%;
-    height: 70px;
-    border-radius: 8px;
-    border: 1px solid #ccc;
-    padding: 8px;
-    resize: none;
+  width: 100%;
+  height: 70px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  padding: 8px;
+  resize: none;
 }
 
 .btn-pagar {
-    display: block;
-    background-color: #25d366; /* Color verde WhatsApp */
-    color: white;
-    text-align: center;
-    padding: 12px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    margin-bottom: 10px;
-    transition: background-color 0.2s;
+  display: block;
+  background-color: #25d366;
+  /* Color verde WhatsApp */
+  color: white;
+  text-align: center;
+  padding: 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  margin-bottom: 10px;
+  transition: background-color 0.2s;
 }
 
 .btn-pagar:hover {
-    background-color: #1ebe5d;
+  background-color: #1ebe5d;
 }
 
 .btn-seguir {
-    display: block;
-    text-align: center;
-    color: var(--color-primario);
-    text-decoration: none;
-    font-size: 0.9rem;
-    margin-top: 10px;
+  display: block;
+  text-align: center;
+  color: var(--color-primario);
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin-top: 10px;
 }
 
 
