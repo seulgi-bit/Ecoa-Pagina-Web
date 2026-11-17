@@ -33,6 +33,17 @@ body {
   /* Elimina cualquier barra de scroll horizontal */
 }
 
+/*cuerpo en plural de la pestaña con banner y texto*/
+body {
+  background-color: var(--color-fondo);
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  line-height: 1.6;
+  font-family: var(--fuente-principal);
+}
+
+/*BARRA DE NAVEGACION Y MENU HAMBURGUESA RESPONSIVE*/
 /* Por defecto, el botón hamburguesa está oculto en pantallas grandes (PC) */
 .btn-menu {
   display: none;
@@ -47,12 +58,11 @@ body {
 /* --- ESTILOS PARA MÓVILES (Pantallas menores a 768px) --- */
 @media (max-width: 768px) {
 
-  /* 1. Mostramos el botón hamburguesa en celulares */
+  /* botón hamburguesa en celulares */
   .btn-menu {
     display: block;
   }
 
-  /* 2. Ocultamos el menú de navegación horizontal por defecto en móviles */
   #navmenu {
     display: none;
     flex-direction: column;
@@ -68,7 +78,6 @@ body {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
   }
 
-  /* 3. Clase dinámica que activará el JavaScript para mostrar el menú */
   #navmenu.activo {
     display: flex;
   }
@@ -92,9 +101,6 @@ body {
 
 /*titulo de la empresa en el banner*/
 .nombre {
-  color: var(--color-accento);
-  font-size: 1.8rem;
-  text-align: left;
   margin: 0;
   font-family: var(--fuente-principal);
   display: flex;
@@ -106,13 +112,12 @@ body {
 .nombre h1 {
   font-size: 1.8rem;
   margin: 0;
+  color: var(--color-accento);
 }
 
 .logo {
   height: 40px;
-  /* Ajusta esta altura al tamaño que más te guste */
   width: auto;
-  /* Mantiene la proporción de la imagen sin deformarla */
   object-fit: contain;
 }
 
@@ -126,7 +131,6 @@ body {
 /*para acomodar cada enlace*/
 #navmenu a {
   text-decoration: none;
-  /*quita la raya azul de los enlaces por defecto*/
   color: var(--color-secundario);
   white-space: nowrap;
   font-size: 1.5rem;
@@ -138,8 +142,9 @@ body {
 /*para que cambie de color al pasar el mouse o oprimirlo*/
 #navmenu a:hover {
   color: var(--color-blanco);
-  transition: color 0.3s ease;
 }
+
+/*BOTONES DE NAVEGACION*/
 
 .btn-login-container {
   display: inline-block;
@@ -174,44 +179,34 @@ body {
   justify-content: center;
   text-decoration: none;
   font-size: 1.4rem;
-  /* Tamaño si usas un emoji/icono de texto */
   padding: 8px;
   border-radius: 50%;
-  /* Fondo circular opcional */
   transition: transform 0.2s ease, background-color 0.2s ease;
 }
 
-/* EFECTO HOVER: Cambia al pasar el ratón */
 .btn-carrito:hover {
   transform: scale(1.1);
-  /* Se agranda levemente al pasar el ratón */
   background-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Si usas una imagen PNG o SVG dentro del carrito */
 .btn-carrito img {
   width: 24px;
-  /* Ancho del icono */
   height: 24px;
-  /* Alto del icono */
   object-fit: contain;
-  /* Si tu imagen es negra/oscura, esta propiedad la vuelve blanca automáticamente: */
   filter: brightness(0) invert(1);
 }
 
-/*portada inicial de la pagina inicio.html*/
+/*ESTILOS INICIO.HTML*/
 #inicio {
   padding-top: 10rem;
 }
 
-/*titulo de la portada inicio.html*/
 .titulo {
   color: var(--color-accento);
   text-align: center;
   font-size: 3rem;
 }
 
-/*texto abajo del titulo de la portada*/
 .diseña {
   text-align: center;
   color: var(--color-blanco);
@@ -220,23 +215,17 @@ body {
   font-family: var(--fuente-principal);
 }
 
-/*texto abajo del titulo inicio.html con la imagen de abajo*/
 /*fondo de la portada de inicio*/
 .hero {
-  /* O el nombre de tu imagen */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaecoa2.jpeg');
-
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-
-  /* Agrega esto para darle altura y espacio a la sección */
   min-height: 100vh;
-  /* Ocupa el 80% de la altura de la pantalla */
   padding: 4rem 2rem;
   width: 100%;
 }
@@ -250,17 +239,14 @@ body {
   background-color: var(--color-secundario);
   color: #6818b4;
   text-align: center;
-
   display: inline-block;
   margin: 20px auto;
-
   padding: 12px 24px;
   border-radius: 10px;
-
-  border: 2px solid var(--color-secundario)
+  border: 2px solid var(--color-secundario);
+  transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
-/*cambio de color al pasar el mouse por el boton inicio.html*/
 .btn-primary:hover {
   background-color: var(--color-primario);
   color: var(--color-blanco);
@@ -268,20 +254,7 @@ body {
   border: 2px solid var(--color-primario);
 }
 
-
-/*cuerpo en plural de la pestaña con banner y texto*/
-body {
-  padding-top: 70px;
-  /* O el valor que tenías originalmente para tus otras páginas */
-  margin: 0;
-  box-sizing: border-box;
-  background-color: var(--color-fondo);
-  position: relative;
-  z-index: 1;
-  line-height: 1.6;
-}
-
-/*todos los titulos h2 modificados*/
+/*TITULOS GENERALES H2*/
 h2 {
   color: #ad87ea;
   font-size: 3rem;
@@ -291,24 +264,25 @@ h2 {
   font-family: var(--fuente-principal);
 }
 
+/*ESTILOS ESPECIFICOS SOBREECOA.HTML*/
 body.pagina-sobre-ecoa {
-  background: linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)),
-    url('https://images.unsplash.com/photo-1544816155-12df9643f363?auto=format&fit=crop&w=1920&q=80');
+  background: linear-gradient(rgba(191, 155, 219, 0.9), rgba(136, 95, 220, 0.9)),
+    url(./assets/img/casaecoa2.jpeg);
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding-top: 130px !important;
+  padding-top: 130px;
   /* Empuja el contenido para que el banner no lo tape */
 }
 
-/* --- NUEVO DISEÑO LIMPIO Y MODERNO PARA SOBRE ECOA --- */
 .seccion-sobre-ecoa {
   max-width: 1100px;
   margin: 0 auto;
   padding: 20px 20px 60px 20px;
+  font-size: 1.1rem;
 }
 
-/* 1. Tarjetas Superiores (Propuesta, Misión, Visión) */
+/*Tarjetas Superiores (Propuesta, Misión, Visión) */
 .cards-grid-principales {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -322,7 +296,6 @@ body.pagina-sobre-ecoa {
   padding: 30px;
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
   border-top: 5px solid #ad87ea;
-  /* Color principal de acento */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -345,7 +318,7 @@ body.pagina-sobre-ecoa {
   text-align: left;
 }
 
-/* 2. Sección central "¿Por qué elegir Ecoa?" */
+/* Sección central "¿Por qué elegir Ecoa?" */
 .contenedor-por-que {
   background: #faf8ff;
   border-radius: 20px;
@@ -370,7 +343,7 @@ body.pagina-sobre-ecoa {
   margin-right: auto;
 }
 
-/* 3. Tarjetas Inferiores (Eco-friendly, Personalizado, Hecho con amor) */
+/* Tarjetas Inferiores (Eco-friendly, Personalizado, Hecho con amor) */
 .features-grid-moderna {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -421,7 +394,7 @@ body.pagina-sobre-ecoa {
   color: #e06d8a;
 }
 
-/*titulos en h4 y los titulos de los productos en catalogo.html*/
+/*ESTILOS ESPECIFICOS CATALOGO.HTML*/
 h4 {
   color: var(--color-subtitulos);
   font-size: 2rem;
@@ -431,8 +404,6 @@ h4 {
   font-weight: bolder;
 }
 
-/*seccion del catalogo catalogo.html*/
-/* Espaciado general del catálogo */
 .catalogo {
   padding-top: 90px;
   /* Para que el banner fijo no lo tape */
@@ -517,11 +488,16 @@ h4 {
 }
 
 .btn-pedido {
-  background-color: var(--color-primario);
-  color: white;
-  border: none;
-  border-radius: 8px;
-  padding: 8px 14px;
+  text-decoration: none;
+  background-color: var(--color-secundario);
+  color: rgb(132, 45, 212);
+  text-align: center;
+  width: 150px;
+  border: 2px solid var(--color-secundario);
+  padding: 10px;
+  border-radius: 19px;
+  display: block;
+  margin: 20px auto;
   font-size: 0.9rem;
   cursor: pointer;
   font-weight: bold;
@@ -529,51 +505,28 @@ h4 {
 }
 
 .btn-pedido:hover {
-  background-color: #8050ea;
-  transform: scale(1.05);
-}
-
-/*boton de añadir al carrito*/
-.btn-pedido {
-  text-decoration: none;
-  background-color: var(--color-secundario);
-  color: #6818b4;
-  text-align: center;
-  width: 150px;
-  border: 2px solid var(--color-secundario);
-  padding: 10px 10px;
-  border-radius: 19px;
-  display: block;
-  margin: 20px auto;
-}
-
-/*para que el boton cambie de color al pasar el mouse*/
-.btn-pedido:hover {
   color: var(--color-blanco);
   background-color: var(--color-primario);
   cursor: pointer;
-  border: var(--color-primario);
+  border: 2px var(--color-primario);
   transform: translateY(-8px)
 }
 
-/*contenido de personalizar.html*/
+/*ESTILOS ESPECIFICOS PERSONALIZAR.HTML*/
+
 .customizer {
   margin-top: 70px;
-  /* O el nombre de tu imagen */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('./assets/img/tienda-ecoa.jfif');
-  padding-top: 0%;
+  padding-top: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* Ocupa el 80% de la altura de la pantalla */
   padding: 2rem;
-
   min-height: calc(100vh - 70px);
-
   width: 100%;
   box-sizing: border-box;
 }
@@ -647,41 +600,31 @@ h4 {
   margin-top: 20px;
   padding: 15px 20px;
   background-color: rgba(255, 255, 255, 0.85);
-  /* Fondo blanco semitransparente */
   border: 2px solid #b8a9c9;
-  /* Un borde punteado con tono pastel/lila */
   border-radius: 10px;
-  /* Bordes redondeados suaves */
   text-align: center;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   color: var(--color-subtitulos);
-  /* Tono verde oscuro acorde a tu marca */
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
-  /* Sombra muy sutil */
 }
 
-/* Estilos para los textos internos si los generas con HTML */
 #resultado-cotizacion p {
   margin: 5px 0;
 }
 
-/*todo el texto en la pestaña contacto*/
-#contacto {
-  padding-top: 10%;
-}
+/*ESTILOS ESPECIFICOS CONTACTO.HTML*/
 
-/*titulo de contactame*/
 .titulo-contacto {
   padding-top: 5%;
   color: var(--color-primario);
   font-family: var(--fuente-secundaria);
 }
 
-/*formulario de contacto.html*/
 #contacto {
   border: 2px solid var(--color-accento);
   background-color: var(--color-accento);
   padding: 20px;
+  padding-top: 10%;
   color: var(--color-primario);
   border-radius: 15px;
   text-align: center;
@@ -694,7 +637,6 @@ h4 {
   text-align: left;
 }
 
-/* casillas del formulario*/
 .campo {
   margin-bottom: 15px;
   display: flex;
@@ -711,7 +653,6 @@ h4 {
 /*area de escribir en las casillas*/
 #contacto input,
 #contacto textarea {
-
   width: 100%;
   padding: 10px 12px;
   border: 1px solid var(--color-primario);
@@ -719,6 +660,10 @@ h4 {
   font-family: var(--fuente-secundaria);
   box-sizing: border-box;
   outline: none;
+}
+
+#contacto textarea {
+  padding: 10px;
 }
 
 /*boton de enviar mensaje en contacto.html*/
@@ -743,7 +688,8 @@ h4 {
   border: 2px solid var(--color-secundario);
 }
 
-/* Estructura general de la página de carrito.html */
+/*ESTILOS ESPECIFICOS CARRITO.HTML*/
+
 .carrito-container {
   padding-top: 100px;
   /* Evita que el banner fijo tape el título */
@@ -890,7 +836,7 @@ h4 {
   text-decoration: none;
   font-weight: bold;
   margin-bottom: 10px;
-  transition: background-color 0.2s;
+  transition: background-color 0.2s ease;
 }
 
 .btn-pagar:hover {
@@ -906,8 +852,8 @@ h4 {
   margin-top: 10px;
 }
 
+/*ESTILOS ESPECIFICOS LOGIN.HTML, REGISTRO.HTML*/
 
-/* Estilos específicos para la página de login.html */
 .login-container {
   background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaEcoa3.jfif');
   display: flex;
@@ -918,19 +864,14 @@ h4 {
 }
 
 .login-card {
-  position: relative;
-  /* Permite ubicar la flecha en la esquina superior */
+  position: relative;/* Permite ubicar la flecha en la esquina superior */
   max-width: 400px;
-  margin: 50px auto;
-  /* Centra la tarjeta horizontalmente */
+  margin: 0 auto;/* Centra la tarjeta horizontalmente */
   padding: 35px 30px;
-  background-color: #a87bf7;
-  /* Color morado pastel de fondo */
+  background-color: #a87bf7;/* Color morado pastel de fondo */
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  /* Sombra elegante */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);/* Sombra elegante */
   text-align: center;
-
   background-color: var(--color-accento);
   padding: 2.5rem;
   border-radius: 16px;
@@ -955,12 +896,10 @@ h4 {
 }
 
 .btn-back:hover {
-  transform: translateX(-4px);
-  /* Se mueve sutilmente a la izquierda */
-  color: #e4cf79;
-  /* Cambia a tono dorado o primario */
+  transform: translateX(-4px);/* Se mueve sutilmente a la izquierda */
+  color: #e4cf79;/* Cambia a tono dorado o primario */
 }
-
+/*Titulos y textos dentro de la tarjeta de login*/
 .login-card h1 {
   color: var(--color-primario);
   margin-bottom: 0.5rem;
@@ -981,7 +920,6 @@ h4 {
   text-align: left;
   margin-bottom: 1.2rem;
   border: radius 15px;
-  ;
 }
 
 .login-card input {
@@ -1006,19 +944,16 @@ h4 {
   color: #ffffff;
   text-decoration: none;
   margin-bottom: 1.2rem;
-
 }
 
 .forgot-pass:hover {
   text-decoration: underline;
-
 }
 
 .btn-entrar {
   width: 100%;
   padding: 12px;
-  background-color: #a3e6be;
-  /* Verde pastel acorde a Ecoa */
+  background-color: #a3e6be;/* Verde pastel acorde a Ecoa */
   color: #8c58de;
   border: none;
   border-radius: 12px;
@@ -1059,12 +994,10 @@ h4 {
   font-size: 1.3rem;
   margin-bottom: 5px;
   width: 90%;
-  /* Hace que sea adaptable */
   max-width: 400px;
-  /* <-- ¡Aquí cambias el ancho máximo! */
   margin: 0 auto;
 }
-
+/*mensaje de error en el login*/
 .error-msg {
   color: #d9534f;
   font-size: 0.85rem;
@@ -1075,31 +1008,26 @@ h4 {
   background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaEcoa3.jfif');
 }
 
-
+/*PIE DE LA PAGINA FOOTER*/
 
 footer {
   background-color: var(--color-primario, #6b21a8);
-  /* Tu color morado */
   color: #ffffff;
   width: 100vw;
-  /* Ocupa todo el ancho de la ventana */
   position: relative;
   left: 50%;
   right: 50%;
   margin-left: -50vw;
-  /* Centra y fuerza el ancho completo */
   margin-right: -50vw;
   padding: 2rem 0;
-  /* Espacio interno arriba y abajo */
   text-align: center;
   margin-top: auto;
   box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.238);
   border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-  /* Empuja el footer hacia abajo si usas flexbox en el body */
+  border-top-right-radius: 20px;/* Empuja el footer hacia abajo si usas flexbox en el body */
 }
 
-/*la barra de scroll*/
+/*BARRA DE SCROLL*/
 ::-webkit-scrollbar {
   width: 9px;
 }
@@ -1116,5 +1044,4 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--color-primario);
 }
-
-/*cambia la forma del catalogo*/
+ 
