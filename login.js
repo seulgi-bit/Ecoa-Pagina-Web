@@ -1,23 +1,19 @@
-// --- LÓGICA DE INICIO DE SESIÓN SEGURO ---
 document.addEventListener("DOMContentLoaded", () => {
-    // Buscamos el formulario de login (ya sea por ID 'loginForm' o por etiqueta 'form')
     const formLogin = document.getElementById("loginForm") || document.querySelector("form");
     const mensajeError = document.getElementById("mensajeError");
 
     if (formLogin) {
-        formLogin.addEventListener("submit", function (evento) {
+        formLogin.addEventListener("submit", async function (evento) {
             evento.preventDefault(); // Evita que la página se recargue
 
-            // 1. Obtenemos lo que el usuario escribió
-            const correo = document.getElementById("email") 
-                           ? document.getElementById("email").value.trim() 
-                           : document.querySelector("input[type='email']").value.trim();
-                           
-            const password = document.getElementById("password") 
-                             ? document.getElementById("password").value.trim() 
-                             : document.querySelector("input[type='password']").value.trim();
+            // Obtenemos el correo y la contraseña ingresados
+            const correo = document.getElementById("email")?.value.trim() 
+                        || document.querySelector("input[type='email']").value.trim();
+            
+            const password = document.getElementById("password")?.value.trim() 
+                          || document.querySelector("input[type='password']").value.trim();
 
-            // 2. Validamos que no estén vacíos
+            // Validamos que no estén vacíos
             if (correo === "" || password === "") {
                 if (mensajeError) {
                     mensajeError.textContent = "Por favor, completa todos los campos.";
@@ -27,93 +23,43 @@ document.addEventListener("DOMContentLoaded", () => {
                 return;
             }
 
-            // 3. Buscamos el usuario registrado en la "base de datos" local (localStorage)
-            const usuarioRegistrado = JSON.parse(localStorage.getItem("usuarioEcoa"));
+            try {
+                // Hacemos la petición fetch al servidor backend
+                const respuesta = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ correo, password })
+                });
 
-            // 4. Verificamos si existe un registro previo
-            if (!usuarioRegistrado) {
-                if (mensajeError) {
-                    mensajeError.textContent = "No hay cuentas registradas. Por favor, regístrate.";
+                const datos = await respuesta.json();
+
+                if (respuesta.ok) {
+                    // Si el login es exitoso
+                    alert(`¡Bienvenida de vuelta a Ecoa, ${datos.nombre} ! 🌿✨`);
+                    localStorage.setItem("sesionActiva", "true");
+                    
+                    // Redirigimos a la página de inicio
+                    window.location.href = "inicio.html";
                 } else {
-                    alert("❌ No hay ninguna cuenta registrada. Regístrate primero.");
+                    // Si el correo o contraseña son incorrectos
+                    if (mensajeError) {
+                        mensajeError.textContent = datos.mensaje || "Correo o contraseña incorrectos.";
+                    } else {
+                        alert(datos.mensaje || "Correo o contraseña incorrectos.");
+                    }
                 }
-                return;
-            }
 
-            // 5. Comparamos los datos ingresados con los guardados
-            if (correo === usuarioRegistrado.correo && password === usuarioRegistrado.password) {
-                alert("¡Bienvenida de vuelta a Ecoa, " + usuarioRegistrado.nombre + "! 🌿✨");
-                
-                // Guardamos el estado de sesión activa
-                localStorage.setItem("sesionActiva", "true");
-
-                // Redirigimos a la página de inicio
-                window.location.href = "inicio.html";
-            } else {
+            } catch (error) {
+                console.error("Error al conectar con el servidor:", error);
                 if (mensajeError) {
-                    mensajeError.textContent = "Correo o contraseña incorrectos. Inténtalo de nuevo.";
+                    mensajeError.textContent = "No se pudo conectar con el servidor. Revisa que esté encendido.";
                 } else {
-                    alert("❌ Error: Correo o contraseña incorrectos.");
-                }
-            }
-        });
-    }
-});
-// --- LÓGICA DE INICIO DE SESIÓN RECONOCIENDO CUENTAS ---
-document.addEventListener("DOMContentLoaded", () => {
-    const formLogin = document.getElementById("loginForm") || document.querySelector("form");
-    const mensajeError = document.getElementById("mensajeError");
-
-    if (formLogin) {
-        formLogin.addEventListener("submit", function (evento) {
-            evento.preventDefault();
-
-            const correo = document.getElementById("email") 
-                           ? document.getElementById("email").value.trim() 
-                           : document.querySelector("input[type='email']").value.trim();
-                           
-            const password = document.getElementById("password") 
-                             ? document.getElementById("password").value.trim() 
-                             : document.querySelector("input[type='password']").value.trim();
-
-            if (correo === "" || password === "") {
-                if (mensajeError) {
-                    mensajeError.textContent = "Por favor, completa todos los campos.";
-                } else {
-                    alert("Por favor, completa todos los campos.");
-                }
-                return;
-            }
-
-            // Buscamos si hay un usuario guardado en el navegador
-            const usuarioRegistrado = JSON.parse(localStorage.getItem("usuarioEcoa"));
-
-            // 1. Si no existe ninguna cuenta registrada
-            if (!usuarioRegistrado) {
-                if (mensajeError) {
-                    mensajeError.textContent = "No hay cuentas registradas. Por favor, regístrate.";
-                } else {
-                    alert("❌ No hay ninguna cuenta registrada. Regístrate primero.");
-                }
-                return;
-            }
-
-            // 2. Verificamos si los datos coinciden con los del registro
-            if (correo === usuarioRegistrado.correo && password === usuarioRegistrado.password) {
-                alert("¡Bienvenida de vuelta a Ecoa, " + usuarioRegistrado.nombre + "! 🌿✨");
-                
-                // Activamos la sesión (esto también le dice a tu carrito que ya puede guardar datos)
-                localStorage.setItem("sesionActiva", "true");
-
-                // Redirigimos al inicio
-                window.location.href = "inicio.html";
-            } else {
-                if (mensajeError) {
-                    mensajeError.textContent = "Correo o contraseña incorrectos.";
-                } else {
-                    alert("❌ Error: Correo o contraseña incorrectos.");
+                    alert("No se pudo conectar con el servidor.");
                 }
             }
         });
     }
 });
+        

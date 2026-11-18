@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const formRegistro = document.querySelector("form");
 
     if (formRegistro) {
-        formRegistro.addEventListener("submit", function (evento) {
+        formRegistro.addEventListener("submit", async function (evento) {
             evento.preventDefault(); // Evita que la página se recargue
 
             // 1. Capturamos los valores que el usuario escribió en el formulario
@@ -17,7 +17,7 @@ document.addEventListener("DOMContentLoaded", () => {
             const password = passwordInput ? passwordInput.value.trim() : "";
 
             // 2. Validamos que no queden campos vacíos
-            if (!nombre || !correo || !password) {
+            if (!nombre || !email || !password) {
                 alert("Por favor, completa todos los campos para registrarte.");
                 return;
             }
@@ -25,16 +25,35 @@ document.addEventListener("DOMContentLoaded", () => {
             // 3. Creamos un objeto con los datos del nuevo usuario
             const nuevoUsuario = {
                 nombre: nombre,
-                correo: correo,
+                email: correo,
                 password: password
             };
 
-            // 4. Guardamos el usuario en el localStorage (simulando tu base de datos local)
-            localStorage.setItem("usuarioEcoa", JSON.stringify(nuevoUsuario));
+            // --- 4. ENVIAR LOS DATOS AL SERVIDOR Y A MONGODB ---
+        try {
+            const respuesta = await fetch('http://localhost:1111/api/registro', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ nombre, email : correo, password })
+            });
 
-            // 5. Mensaje de éxito y redirección automática al login
-            alert("¡Registro exitoso, " + nombre + "! 🌿✨ Ya puedes iniciar sesión.");
-            window.location.href = "login.html";
+            const resultado = await respuesta.json();
+
+            if (respuesta.ok) {
+                // Mensaje de éxito y redirección automática al login
+                alert(`¡Registro exitoso, ${nombre}! 🌿 Ya puedes iniciar sesión.`);
+                window.location.href = "login.html";
+            } else {
+                // Si el correo ya existe o hubo un error del servidor
+                alert(`Error: ${resultado.mensaje}`);
+            }
+
+        } catch (error) {
+            console.error('Error de conexión con el servidor:', error);
+            alert('No se pudo conectar con el servidor. Revisa que esté encendido.');
+        }
         });
     }
 });

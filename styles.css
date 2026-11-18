@@ -271,7 +271,7 @@ body.pagina-sobre-ecoa {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
-  padding-top: 130px;
+  padding-top: 120px;
   /* Empuja el contenido para que el banner no lo tape */
 }
 
@@ -855,7 +855,7 @@ h4 {
 /*ESTILOS ESPECIFICOS LOGIN.HTML, REGISTRO.HTML*/
 
 .login-container {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaEcoa3.jfif');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaecoa4.jfif');
   display: flex;
   justify-content: center;
   align-items: center;
@@ -864,13 +864,17 @@ h4 {
 }
 
 .login-card {
-  position: relative;/* Permite ubicar la flecha en la esquina superior */
+  position: relative;
+  /* Permite ubicar la flecha en la esquina superior */
   max-width: 400px;
-  margin: 0 auto;/* Centra la tarjeta horizontalmente */
+  margin: 0 auto;
+  /* Centra la tarjeta horizontalmente */
   padding: 35px 30px;
-  background-color: #a87bf7;/* Color morado pastel de fondo */
+  background-color: #a87bf7;
+  /* Color morado pastel de fondo */
   border-radius: 20px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);/* Sombra elegante */
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+  /* Sombra elegante */
   text-align: center;
   background-color: var(--color-accento);
   padding: 2.5rem;
@@ -896,9 +900,12 @@ h4 {
 }
 
 .btn-back:hover {
-  transform: translateX(-4px);/* Se mueve sutilmente a la izquierda */
-  color: #e4cf79;/* Cambia a tono dorado o primario */
+  transform: translateX(-4px);
+  /* Se mueve sutilmente a la izquierda */
+  color: #e4cf79;
+  /* Cambia a tono dorado o primario */
 }
+
 /*Titulos y textos dentro de la tarjeta de login*/
 .login-card h1 {
   color: var(--color-primario);
@@ -953,7 +960,8 @@ h4 {
 .btn-entrar {
   width: 100%;
   padding: 12px;
-  background-color: #a3e6be;/* Verde pastel acorde a Ecoa */
+  background-color: #a3e6be;
+  /* Verde pastel acorde a Ecoa */
   color: #8c58de;
   border: none;
   border-radius: 12px;
@@ -997,6 +1005,7 @@ h4 {
   max-width: 400px;
   margin: 0 auto;
 }
+
 /*mensaje de error en el login*/
 .error-msg {
   color: #d9534f;
@@ -1005,7 +1014,111 @@ h4 {
 }
 
 .login-body {
-  background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaEcoa3.jfif');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaecoa4.jfif');
+}
+
+/*ESTILOS ESPECIFICOS DE RECUPERAR.HTML*/
+/* --- Estilos para la Tarjeta de Recuperación de Contraseña --- */
+.contenedor-recuperar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaecoa4.jfif');
+  /* Fondo sutil si tienes una imagen de fondo */
+}
+
+.tarjeta-formulario {
+  background: var(--color-accento);
+  padding: 30px 40px;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(51, 24, 87, 0.15);
+  width: 100%;
+  max-width: 420px;
+  text-align: center;
+}
+
+.tarjeta-formulario h2 {
+  color: var(--color-primario);
+  margin-bottom: 10px;
+  font-size: 27px;
+  font-family: var(--fuente-secundaria);
+}
+
+.tarjeta-formulario p {
+  color: var(--color-subtitulos);
+  font-family: var(--fuente-principal);
+  font-size: 16px;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.grupo-input {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.grupo-input label {
+  display: block;
+  color: var(--color-blanco);
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 6px;
+}
+
+.grupo-input input {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #5b1cac;
+  border-radius: 8px;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.3s ease;
+}
+
+.grupo-input input:focus {
+  border-color: var(--color-primario);
+}
+
+.btn-principal {
+  width: 100%;
+  background-color: var(--color-primario);
+  /* Tono verde naturaleza / pastel de Ecoa */
+  color: var(--color-secundario);
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.btn-principal:hover {
+  background-color: var(--color-secundario);
+  color: var(--color-primario);
+}
+
+.enlace-volver {
+  display: inline-block;
+  text-align: left;
+  width: 100%;
+  color: var(--color-blanco);
+  text-decoration: none;
+  font-size: 14px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+.enlace-volver:hover {
+  text-decoration: underline;
+}
+
+.mensaje-estado {
+  margin-top: 15px;
+  font-size: 14px;
+  font-weight: 500;
 }
 
 /*PIE DE LA PAGINA FOOTER*/
@@ -1024,7 +1137,8 @@ footer {
   margin-top: auto;
   box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.238);
   border-top-left-radius: 20px;
-  border-top-right-radius: 20px;/* Empuja el footer hacia abajo si usas flexbox en el body */
+  border-top-right-radius: 20px;
+  /* Empuja el footer hacia abajo si usas flexbox en el body */
 }
 
 /*BARRA DE SCROLL*/
@@ -1044,4 +1158,3 @@ footer {
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--color-primario);
 }
- 

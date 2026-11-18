@@ -1,0 +1,41 @@
+
+    <!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecoa | Recuperar contraseña</title>
+     <link rel="icon" href="./assets/img/logoecoa.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="contenedor-recuperar">
+        <div class="tarjeta-formulario">
+            <a href="login.html" class="enlace-volver">← Volver</a>
+            
+            <h2>Recuperar Contraseña</h2>
+            <p>Ingresa tu correo electrónico y te enviaremos instrucciones para restablecer tu contraseña.</p>
+
+            <form id="recuperarForm">
+                <div class="grupo-input">
+                    <label for="email">Correo electrónico</label>
+                    <input type="email" id="email" required placeholder="tucorreo@gmail.com">
+                </div>
+
+                <button type="submit" class="btn-principal">Enviar instrucciones</button>
+            </form>
+
+            <p id="mensajeEstado" class="mensaje-estado"></p>
+        </div>
+    </div>
+
+    <script src="recuperar.js"></script>
+    <script src="menu.js"></script>
+</body>
+</html>
