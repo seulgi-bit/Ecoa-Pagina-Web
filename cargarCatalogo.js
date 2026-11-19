@@ -65,6 +65,86 @@ mongoose.connect(process.env.MONGO_URI)
         },
         stock: 15
       }
+      {
+        nombre: "Nueva Libreta Tradicional EcoChina",
+        descripcion: "Diseño exclusivo de temporada año nuevo chino.",
+        precio: 35000,
+        imagen: "./assets/img/templochino.jpg",
+        caracteristicas: {
+          tamano: "20cm x 20cm (Formato cuadrado).",
+          materiales: [
+            "100 paginas de papel de algodon reciclado.",
+            "Carton rigido interior hecho de carton 100% reciclado prensado.",
+            "Cosido hacia afuera con hilo encerado negro."
+          ],
+          diseno: "Estilo tradicional inspirado en la cultura china."
+        },
+        stock: 20
+      }
+       {
+        nombre: "Nueva Libreta Econavideño",
+        descripcion: "Diseño exclusivo de fin de año",
+        precio: 50000,
+        imagen: "./assets/img/econavideño.jpg",
+        caracteristicas: {
+          tamano: "14,8 × 21 cm(Formato A5).",
+          materiales: [
+            "80 paginas de colores de navidad, 20 de cada color .",
+            "Carton rigido interior forrado en tela lino color veige.",
+            "Cosido a mano con hilo de algodon y pegado."
+          ],
+          diseno: "Estilo especial navideño."
+        },
+        stock: 35
+      }
+      {
+        nombre: "Nueva Libreta Ecoa",
+        descripcion: "Diseño exclusivo de ecoa",
+        precio: 50000,
+        imagen: "./assets/img/originalecoa.jpg",
+        caracteristicas: {
+          tamano: "21 cm de base x 17 cm dos lados(Formato triangular).",
+          materiales: [
+            "60 paginas papel reciclado color kraft.",
+            "Carton rigido interior forrado en tela lino roja con detalles de hojas y un colibri.",
+            "Cosido a mano con hilo de algodon y pegado."
+          ],
+          diseno: "Estilo diseño original ecoa."
+        },
+        stock: 25
+      }
+       {
+        nombre: "Nueva Libreta Ecoa",
+        descripcion: "Diseño exclusivo astrologico",
+        precio: 57000,
+        imagen: "./assets/img/estrellaecoa.jpg",
+        caracteristicas: {
+          tamano: "18 cm de punta a punta x 6cm d elargo cada punta(Formato estrella).",
+          materiales: [
+            "60 paginas papel reciclado color negro.",
+            "Carton rigido interior forrado en tilustracion de cielo nocturno.",
+            "Cosido a mano con hilo de algodon y pegado."
+          ],
+          diseno: "Estilo diseño original ecoa."
+        },
+        stock: 20
+      }
+      {
+        nombre: "Nueva Libreta Ecocute",
+        descripcion: "Diseño para journaling",
+        precio: 40000,
+        imagen: "./assets/img/cuteecoa.jpg",
+        caracteristicas: {
+          tamano: "14.8 cm x 21 cm(Formato A5).",
+          materiales: [
+            "96 paginas papel reciclado color veige.",
+            "Carton rigido interior forrado en tela rosa pastle con dettales bordadod",
+            "Cosido a mano con hilo de algodon y pegado."
+          ],
+          diseno: "Estilo diseño original ecoa."
+        },
+        stock: 45
+      }
     ];
 
     await Catalogo.deleteMany({});
