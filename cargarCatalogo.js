@@ -5,7 +5,7 @@ const Catalogo = require('./modelos/catalogo');
 mongoose.connect(process.env.MONGO_URI)
   .then(async () => {
     console.log("Conectado a MongoDB para migrar el catálogo...");
-    // Mis productos
+
     const productosHTML = [
       {
         nombre: "Tamaño A6",
@@ -67,7 +67,6 @@ mongoose.connect(process.env.MONGO_URI)
       }
     ];
 
-   
     await Catalogo.deleteMany({});
     await Catalogo.insertMany(productosHTML);
 
