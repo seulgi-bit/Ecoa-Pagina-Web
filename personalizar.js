@@ -1,6 +1,6 @@
 
 console.log("El archivo de JavaScript está conectado correctamente.");
-// 1. Declaramos TODAS las variables correctamente buscando sus ID del HTML
+
 const selectFormato = document.getElementById('formato');
 const selectTamaño = document.getElementById('tamaño');
 const selecttipoPortada = document.getElementById('tipo-portada');
@@ -16,7 +16,7 @@ const selectAccesorioextra = document.getElementById('accesorio-extra');
 const btnCotizar = document.getElementById('btn-cotizar');
 const divResultado = document.getElementById('resultado-cotizacion');
 
-// 2. Objeto con los precios
+
 const precios = {
   formato: {
     horizontal: 5000,
@@ -110,10 +110,10 @@ const precios = {
 
 };
 
-// 3. Función para calcular el precio
+
 function calcularPrecio() {
 
-  // Obtenemos los valores seleccionados
+  
   const formatoSeleccionado = selectFormato.value;
   const tamañoSeleccionado = selectTamaño.value;
   const tipoPortadaSeleccionado = selecttipoPortada.value;
@@ -127,7 +127,6 @@ function calcularPrecio() {
   const encuadernadoSeleccionado = selectEncuadernado.value;
   const accesorioExtraSeleccionado = selectAccesorioextra.value;
 
-  // Buscamos los costos en el objeto
   const costoFormato = precios.formato[formatoSeleccionado] || 0;
   const costoTamaño = precios.tamaño[tamañoSeleccionado] || 0;
   const costoTipoPortada = precios["tipo-Portada"][tipoPortadaSeleccionado] || 0;
@@ -141,13 +140,13 @@ function calcularPrecio() {
   const costoEncuadernado = precios.encuadernado[encuadernadoSeleccionado] || 0;
   const costoAccesorioExtra = precios["accesorio-Extra"][accesorioExtraSeleccionado] || 0;
 
-  // Sumamos todo
+  
   const precioTotal = costoFormato + costoTamaño + costoTipoPortada +
     costoGamaColorPortada + costoMargenPortada + costoPortadaAnimada +
     costoTipoPapel + costoGamaColorHojas + costoHojas +
     costoDecoracionHojas + costoEncuadernado + costoAccesorioExtra;
 
-  // Mostramos el resultado en pantalla
+  
   divResultado.innerHTML = `
         <div style="background: #fdfbf7; padding: 15px; border-radius: 8px; border: 1px solid #dcd3c1;">
           <p style="font-weight: bold; color: #2d5a27; font-size: 1.1rem;">✨ Resumen de tu libreta Ecoa:</p>
@@ -173,7 +172,7 @@ function calcularPrecio() {
   return precioTotal;
 }
 
-// 4. Asignamos el evento de clic al botón
+
 if (btnCotizar) {
   btnCotizar.addEventListener('click', calcularPrecio);
 }

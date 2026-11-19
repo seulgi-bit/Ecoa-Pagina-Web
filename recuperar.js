@@ -14,11 +14,11 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
       }
 
-      // Aquí puedes conectar más adelante con tu backend si creas una ruta /api/recuperar
+      
       mensajeEstado.textContent = "¡Listo! Si el correo está registrado, enviaremos las instrucciones.";
       mensajeEstado.style.color = "#ffffff";
 
-      // Limpiamos el campo después de unos segundos o simulamos el proceso
+      
       setTimeout(() => {
         formRecuperar.reset();
       }, 3000);

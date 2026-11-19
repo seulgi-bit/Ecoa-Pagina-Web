@@ -50,7 +50,7 @@ document.addEventListener("DOMContentLoaded", async () => {
       contenedorProductos.appendChild(tarjeta);
     });
 
-    // Evento para los botones de agregar al carrito (conectado a 'carritoEcoa')
+   
     document.querySelectorAll(".btn-pedido").forEach(boton => {
       boton.addEventListener("click", (e) => {
         const btn = e.currentTarget;

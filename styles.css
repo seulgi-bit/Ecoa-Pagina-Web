@@ -55,7 +55,7 @@ body {
   padding: 5px;
 }
 
-/* --- ESTILOS PARA MÓVILES (Pantallas menores a 768px) --- */
+/*  ESTILOS PARA MÓVILES  */
 @media (max-width: 768px) {
 
   /* botón hamburguesa en celulares */
@@ -282,7 +282,7 @@ body.pagina-sobre-ecoa {
   font-size: 1.1rem;
 }
 
-/*Tarjetas Superiores (Propuesta, Misión, Visión) */
+/* (Propuesta, Misión, Visión) */
 .cards-grid-principales {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -705,7 +705,6 @@ h4 {
 
 .carrito-container {
   padding-top: 100px;
-  /* Evita que el banner fijo tape el título */
   max-width: 1100px;
   margin: 0 auto;
   padding-left: 2rem;
@@ -841,7 +840,6 @@ h4 {
 .btn-pagar {
   display: block;
   background-color: #25d366;
-  /* Color verde WhatsApp */
   color: white;
   text-align: center;
   padding: 12px;
@@ -878,16 +876,12 @@ h4 {
 
 .login-card {
   position: relative;
-  /* Permite ubicar la flecha en la esquina superior */
   max-width: 400px;
   margin: 0 auto;
-  /* Centra la tarjeta horizontalmente */
   padding: 35px 30px;
   background-color: #a87bf7;
-  /* Color morado pastel de fondo */
   border-radius: 20px;
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-  /* Sombra elegante */
   text-align: center;
   background-color: var(--color-accento);
   padding: 2.5rem;
@@ -914,9 +908,7 @@ h4 {
 
 .btn-back:hover {
   transform: translateX(-4px);
-  /* Se mueve sutilmente a la izquierda */
   color: #e4cf79;
-  /* Cambia a tono dorado o primario */
 }
 
 /*Titulos y textos dentro de la tarjeta de login*/
@@ -974,7 +966,6 @@ h4 {
   width: 100%;
   padding: 12px;
   background-color: #a3e6be;
-  /* Verde pastel acorde a Ecoa */
   color: #8c58de;
   border: none;
   border-radius: 12px;
@@ -1031,7 +1022,6 @@ h4 {
 }
 
 /*ESTILOS ESPECIFICOS DE RECUPERAR.HTML*/
-/* --- Estilos para la Tarjeta de Recuperación de Contraseña --- */
 .contenedor-recuperar {
   display: flex;
   justify-content: center;
@@ -1039,7 +1029,6 @@ h4 {
   min-height: 100vh;
   background-color: rgba(0, 0, 0, 0.4);
   background-image: linear-gradient(rgba(0, 0, 0, 0.502), rgba(0, 0, 0, 0.4)), url('assets/img/casaecoa4.jfif');
-  /* Fondo sutil si tienes una imagen de fondo */
 }
 
 .tarjeta-formulario {
@@ -1097,7 +1086,6 @@ h4 {
 .btn-principal {
   width: 100%;
   background-color: var(--color-primario);
-  /* Tono verde naturaleza / pastel de Ecoa */
   color: var(--color-secundario);
   padding: 12px;
   border: none;
@@ -1151,7 +1139,6 @@ footer {
   box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.238);
   border-top-left-radius: 20px;
   border-top-right-radius: 20px;
-  /* Empuja el footer hacia abajo si usas flexbox en el body */
 }
 
 /*BARRA DE SCROLL*/

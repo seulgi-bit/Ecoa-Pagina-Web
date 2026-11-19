@@ -1,4 +1,4 @@
-// --- LÓGICA EXCLUSIVA: Mostrar y gestionar la tabla del carrito y WhatsApp ---
+//Mostrar y gestionar la tabla del carrito y WhatsApp 
 document.addEventListener('DOMContentLoaded', () => {
 
     const contenedorProductos = document.querySelector('.carrito-productos') || document.querySelector('.carrito-contenido');
@@ -155,15 +155,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 carrito[index].cantidad -= 1;
             }
         } else if (accion === 'eliminar') {
-            // Borramos el elemento del arreglo localmente
+            
             carrito.splice(index, 1);
         }
         guardarCarrito();
         mostrarCarrito();
-        // Guardamos inmediatamente el nuevo estado en el navegador
+        
         localStorage.setItem("carritoEcoa", JSON.stringify(carrito));
 
-        // Volvemos a pintar el carrito actualizado en pantalla
+        
         mostrarCarrito();
     });
     mostrarCarrito();

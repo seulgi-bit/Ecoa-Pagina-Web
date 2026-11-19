@@ -1,4 +1,4 @@
-// --- LÓGICA EXCLUSIVA: Añadir productos al carrito desde el catálogo ---
+//Añadir productos al carrito desde el catálogo 
 document.addEventListener('DOMContentLoaded', () => {
     const botonesAnadir = document.querySelectorAll('.btn-pedido');
 
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 carrito.push(producto);
             }
 
-            // Guardar solo si hay sesión activa
+            
             if (localStorage.getItem('sesionActiva') === 'true') {
                 localStorage.setItem('carritoEcoa', JSON.stringify(carrito));
             }

@@ -3,22 +3,27 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 require('dotenv').config();
+const path = require("path")
 
 const app = express();
 
 // Middlewares
 app.use(express.json());
 app.use(cors());
-app.use(express.static(__dirname));// verifica que en el servidor aparezca mi pagina web
+app.use(express.static(__dirname));
 
-// 1. Conexión a MongoDB usando la variable del archivo .env
+app.get("/", (req, res) => {
+    res.sendFile(path.join(__dirname, "inicio.html"));
+});
+
+//  Conexión a MongoDB usando la variable del archivo .env
 const PORT = process.env.PORT || 1111;
 const MONGO_URI = process.env.MONGO_URI;
 
 mongoose.connect(MONGO_URI)
     .then(() => {
         console.log('¡Conexión exitosa a MongoDB Atlas! 🌿🚀');
-        // Encendemos el servidor solo si la base de datos respondió bien
+       
         app.listen(PORT, () => {
             console.log(`Servidor corriendo en el puerto ${PORT}`);
         });
@@ -27,17 +32,14 @@ mongoose.connect(MONGO_URI)
         console.error('Error al conectar a la base de datos:', error);
     });
 
-// 2. Ejemplo de una "Ruta" (Endpoint) básica para probar
-app.get('/', (req, res) => {
-    res.send('El servidor de Ecoa está conectado y funcionando.');
-});
 
-// 3. IMPORTAR LOS MODELOS DE LA BASE DE DATOS
+
+
 
 const Usuario = require('./modelos/usuario.js');
 const Catalogo = require('./modelos/catalogo.js');
 
-//PARA CONECTAR LA BASE DE DATOS DE MONGO A CATALOGO EN VEZ DE HTML
+
 app.get('/api/catalogo', async (req, res) => {
     try {
         const productos = await Catalogo.find();
@@ -46,7 +48,7 @@ app.get('/api/catalogo', async (req, res) => {
         res.status(500).json({ error: 'Error al obtener el catalogo' });
     }
 });
-// 4. RUTAS PARA EL REGISTRO DE USUARIOS
+
 app.post('/api/registro', async (req, res) => {
     try {
         const { nombre, email, password } = req.body;
@@ -56,7 +58,7 @@ app.post('/api/registro', async (req, res) => {
         if (usuarioExistente) {
             return res.status(400).json({ mensaje: 'Este correo ya está registrado.' });
         }
-        // Crear y guardar el nuevo usuario en MongoDB
+        // Crear y guardar el nuevo usuario en Mongodb
         const nuevoUsuario = new Usuario({ nombre, email, password });
         await nuevoUsuario.save();
 
@@ -66,7 +68,7 @@ app.post('/api/registro', async (req, res) => {
         res.status(500).json({ mensaje: 'Error en el servidor al registrar.' });
     }
 });
-// 5. RUTAS PARA EL LOGIN DE USUARIOS
+
 app.post('/api/login', async (req, res) => {
     try {
         const { email, password } = req.body;

@@ -4,16 +4,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (formLogin) {
         formLogin.addEventListener("submit", async function (evento) {
-            evento.preventDefault(); // Evita que la página se recargue
+            evento.preventDefault(); 
 
-            // Obtenemos el correo y la contraseña ingresados
+            
             const correo = document.getElementById("email")?.value.trim()
                 || document.querySelector("input[type='email']").value.trim();
 
             const password = document.getElementById("password")?.value.trim()
                 || document.querySelector("input[type='password']").value.trim();
 
-            // Validamos que no estén vacíos
+           
             if (correo === "" || password === "") {
                 if (mensajeError) {
                     mensajeError.textContent = "Por favor, completa todos los campos.";
@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             try {
-                // Hacemos la petición fetch al servidor backend
+                
                 const respuesta = await fetch('/api/login', {
                     method: 'POST',
                     headers: {
@@ -46,10 +46,10 @@ document.addEventListener("DOMContentLoaded", () => {
                     localStorage.setItem("sesionActiva", "true");
                     localStorage.setItem("usuarioEcoa", JSON.stringify(datosUsuario));
 
-                    // Redirigimos a la página de inicio
+                   
                     window.location.href = "inicio.html";
                 } else {
-                    // Si el correo o contraseña son incorrectos
+                   
                     if (mensajeError) {
                         mensajeError.textContent = datos.mensaje || "Correo o contraseña incorrectos.";
                     } else {
