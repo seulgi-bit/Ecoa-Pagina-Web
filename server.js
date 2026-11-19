@@ -46,10 +46,7 @@ app.get('/api/catalogo', async (req, res) => {
         res.status(500).json({ error: 'Error al obtener el catalogo' });
     }
 });
-
-
 // 4. RUTAS PARA EL REGISTRO DE USUARIOS
-
 app.post('/api/registro', async (req, res) => {
     try {
         const { nombre, email, password } = req.body;
@@ -59,7 +56,6 @@ app.post('/api/registro', async (req, res) => {
         if (usuarioExistente) {
             return res.status(400).json({ mensaje: 'Este correo ya está registrado.' });
         }
-
         // Crear y guardar el nuevo usuario en MongoDB
         const nuevoUsuario = new Usuario({ nombre, email, password });
         await nuevoUsuario.save();
@@ -70,7 +66,6 @@ app.post('/api/registro', async (req, res) => {
         res.status(500).json({ mensaje: 'Error en el servidor al registrar.' });
     }
 });
-
 // 5. RUTAS PARA EL LOGIN DE USUARIOS
 app.post('/api/login', async (req, res) => {
     try {
@@ -82,22 +77,17 @@ app.post('/api/login', async (req, res) => {
             return res.status(401).json({ mensaje: 'Correo o contraseña incorrectos.' });
         }
 
-        res.status(200).json({ mensaje: '¡Inicio de sesión exitoso!', nombre: usuario.nombre });
+        res.status(200).json({
+            mensaje: '¡Inicio de sesión exitoso!',
+            nombre: usuario.nombre,
+            usuario: {
+                id: usuario._id,
+                nombre: usuario.nombre,
+                email: usuario.email
+            }
+        });
     } catch (error) {
         console.error('Error al iniciar sesión:', error);
         res.status(500).json({ mensaje: 'Error en el servidor al iniciar sesión.' });
-    }
-});
-
-
-
-// Ruta para obtener los productos del catálogo en formato JSON
-app.get('/api/catalogo', async (req, res) => {
-    try {
-        const productos = await Catalogo.find();
-        res.status(200).json(productos);
-    } catch (error) {
-        console.error("Error al obtener el catálogo:", error);
-        res.status(500).json({ mensaje: "Error al obtener los productos." });
     }
 });

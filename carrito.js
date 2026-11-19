@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function guardarCarrito() {
+
         const sesionActiva = localStorage.getItem('sesionActiva');
         if (sesionActiva === 'true') {
             localStorage.setItem('carritoEcoa', JSON.stringify(carrito));
@@ -157,16 +158,15 @@ document.addEventListener('DOMContentLoaded', () => {
             // Borramos el elemento del arreglo localmente
             carrito.splice(index, 1);
         }
-
+        guardarCarrito();
+        mostrarCarrito();
         // Guardamos inmediatamente el nuevo estado en el navegador
         localStorage.setItem("carritoEcoa", JSON.stringify(carrito));
 
         // Volvemos a pintar el carrito actualizado en pantalla
         mostrarCarrito();
     });
-
     mostrarCarrito();
-
     // Botón de pago por WhatsApp dentro de la página del carrito
     const btnPagarWhatsApp = document.querySelector('.btn-pagar');
 

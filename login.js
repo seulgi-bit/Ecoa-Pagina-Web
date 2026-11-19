@@ -7,11 +7,11 @@ document.addEventListener("DOMContentLoaded", () => {
             evento.preventDefault(); // Evita que la página se recargue
 
             // Obtenemos el correo y la contraseña ingresados
-            const correo = document.getElementById("email")?.value.trim() 
-                        || document.querySelector("input[type='email']").value.trim();
-            
-            const password = document.getElementById("password")?.value.trim() 
-                          || document.querySelector("input[type='password']").value.trim();
+            const correo = document.getElementById("email")?.value.trim()
+                || document.querySelector("input[type='email']").value.trim();
+
+            const password = document.getElementById("password")?.value.trim()
+                || document.querySelector("input[type='password']").value.trim();
 
             // Validamos que no estén vacíos
             if (correo === "" || password === "") {
@@ -30,16 +30,22 @@ document.addEventListener("DOMContentLoaded", () => {
                     headers: {
                         'Content-Type': 'application/json'
                     },
-                    body: JSON.stringify({ correo, password })
+                    body: JSON.stringify({ email: correo, password })
                 });
 
                 const datos = await respuesta.json();
 
                 if (respuesta.ok) {
-                    // Si el login es exitoso
+                    const nombreUsuario = datos.usuario?.nombre || datos.nombre || correo;
+                    const datosUsuario = datos.usuario || {
+                        nombre: nombreUsuario,
+                        email: correo
+                    };
+
                     alert(`¡Bienvenida de vuelta a Ecoa, ${datos.nombre} ! 🌿✨`);
                     localStorage.setItem("sesionActiva", "true");
-                    
+                    localStorage.setItem("usuarioEcoa", JSON.stringify(datosUsuario));
+
                     // Redirigimos a la página de inicio
                     window.location.href = "inicio.html";
                 } else {
@@ -62,4 +68,3 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
-        
