@@ -64,7 +64,7 @@ mongoose.connect(process.env.MONGO_URI)
           diseno: "Estilo tradicional inspirado en la cultura china."
         },
         stock: 15
-      }
+      },
       {
         nombre: "Nueva Libreta Tradicional EcoChina",
         descripcion: "Diseño exclusivo de temporada año nuevo chino.",
@@ -80,7 +80,7 @@ mongoose.connect(process.env.MONGO_URI)
           diseno: "Estilo tradicional inspirado en la cultura china."
         },
         stock: 20
-      }
+      },
        {
         nombre: "Nueva Libreta Econavideño",
         descripcion: "Diseño exclusivo de fin de año",
@@ -96,7 +96,7 @@ mongoose.connect(process.env.MONGO_URI)
           diseno: "Estilo especial navideño."
         },
         stock: 35
-      }
+      },
       {
         nombre: "Nueva Libreta Ecoa",
         descripcion: "Diseño exclusivo de ecoa",
@@ -112,7 +112,7 @@ mongoose.connect(process.env.MONGO_URI)
           diseno: "Estilo diseño original ecoa."
         },
         stock: 25
-      }
+      },
        {
         nombre: "Nueva Libreta Ecoa",
         descripcion: "Diseño exclusivo astrologico",
@@ -128,7 +128,7 @@ mongoose.connect(process.env.MONGO_URI)
           diseno: "Estilo diseño original ecoa."
         },
         stock: 20
-      }
+      },
       {
         nombre: "Nueva Libreta Ecocute",
         descripcion: "Diseño para journaling",
@@ -139,7 +139,7 @@ mongoose.connect(process.env.MONGO_URI)
           materiales: [
             "96 paginas papel reciclado color veige.",
             "Carton rigido interior forrado en tela rosa pastle con dettales bordadod",
-            "Cosido a mano con hilo de algodon y pegado."
+            "Cosido a mano con hilo de algodon y pegado.",
           ],
           diseno: "Estilo diseño original ecoa."
         },
