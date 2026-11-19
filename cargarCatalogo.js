@@ -1,24 +1,11 @@
-const mongoose = require('mongoose');
-
-const catalogoSchema = new mongoose.Schema({
-  nombre: { type: String, required: true },
-  descripcion: { type: String },
-  precio: { type: Number, required: true },
-  imagen: { type: String },
-  stock: { type: Number, default: 10 }
-});
-
-module.exports = mongoose.model('Catalogo', catalogoSchema);
-//productos de html a mongo db
 require('dotenv').config();
 const mongoose = require('mongoose');
-const Catalogo = require('./models/catalogo');
+const Catalogo = require('./modelos/catalogo');
 
 mongoose.connect(process.env.MONGO_URI)
   .then(async () => {
     console.log("Conectado a MongoDB para migrar el catálogo...");
-
-    // Los productos exactos que tienes en tu catálogo HTML
+    // Tus productos listos para enviar a la base de datos
     const productosHTML = [
       {
         nombre: "Tamaño A6",
@@ -45,7 +32,7 @@ mongoose.connect(process.env.MONGO_URI)
         nombre: "Formato Cuadrado",
         descripcion: "20 x 20 cm Muy atractiva visualmente, popular para diarios de viaje, álbumes de fotos o cuadernos de dibujo.",
         precio: 20000,
-        imagen: "./assets/img/libreta cuadrada.jfif",
+        imagen: "./assets/img/libretacuadrada.jfif",
         stock: 5
       },
       {
@@ -61,13 +48,30 @@ mongoose.connect(process.env.MONGO_URI)
         precio: 30000,
         imagen: "./assets/img/libretaapaisada.jfif",
         stock: 7
+      },
+      {
+        nombre: "Nueva Libreta Tradicional EcoChina",
+        descripcion: "Diseño exclusivo de temporada año nuevo chino.",
+        precio: 40000,
+        imagen: "./assets/img/libretachina.jfif",
+        caracteristicas: {
+          tamano: "14.5 cm de ancho x 21 cm de alto (Formato A5).",
+          materiales: [
+            "200 paginas de papel de algodon reciclado.",
+            "Carton rigido interior hecho de carton 100% reciclado prensado.",
+            "Pegamentos a base de agua biodegradables y tintas ecologicas."
+          ],
+          diseno: "Estilo tradicional inspirado en la cultura china."
+        },
+        stock: 15
       }
     ];
 
+    // Limpia duplicados anteriores e inserta el catálogo completo
     await Catalogo.deleteMany({});
     await Catalogo.insertMany(productosHTML);
 
-    console.log("¡Catálogo migrado a MongoDB Atlas con éxito! 🌿");
+    console.log("✨ ¡Catálogo migrado a MongoDB Atlas con éxito! 🌿");
     mongoose.connection.close();
   })
   .catch(err => console.error("Error al conectar:", err));

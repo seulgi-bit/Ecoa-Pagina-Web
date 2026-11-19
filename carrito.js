@@ -1,13 +1,13 @@
 // --- LÓGICA EXCLUSIVA: Mostrar y gestionar la tabla del carrito y WhatsApp ---
 document.addEventListener('DOMContentLoaded', () => {
-    const contenedorProductos = document.querySelector('.carrito-productos');
+
+    const contenedorProductos = document.querySelector('.carrito-productos') || document.querySelector('.carrito-contenido');
     const subtotalElemento = document.querySelector('#subtotal-carrito');
     const envioElemento = document.querySelector('#envio-carrito');
     const totalElemento = document.querySelector('#total-carrito');
     const costoEnvio = 8000;
 
-    // Si no estamos en la página del carrito, nos detenemos silenciosamente sin mostrar errores
-    if (!contenedorProductos || !subtotalElemento || !envioElemento || !totalElemento) {
+    if (!contenedorProductos) {
         return;
     }
 
@@ -112,15 +112,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
             const controlesCantidad = document.createElement('div');
             controlesCantidad.className = 'item-cantidad';
-            
+
             controlesCantidad.append(crearBoton('-', 'restar', `Restar una unidad de ${producto.titulo || 'producto'}`));
-            
+
             const textoCantidad = document.createElement('span');
             textoCantidad.textContent = String(cantidad);
             controlesCantidad.append(textoCantidad);
-            
+
             controlesCantidad.append(crearBoton('+', 'sumar', `Agregar una unidad de ${producto.titulo || 'producto'}`));
-            
+
             detalles.append(controlesCantidad);
             item.append(detalles);
 
@@ -139,23 +139,29 @@ document.addEventListener('DOMContentLoaded', () => {
         const boton = evento.target.closest('button[data-accion]');
         if (!boton) return;
 
-        const item = boton.closest('.item-carrito');
-        const index = Number(item?.dataset.indice);
+        const itemElement = boton.closest('.item-carrito');
+        if (!itemElement) return;
+
+        const index = Number(itemElement.dataset.indice);
         if (!Number.isInteger(index) || !carrito[index]) return;
 
-        const cantidadActual = Number.isInteger(carrito[index].cantidad) && carrito[index].cantidad > 0
-            ? carrito[index].cantidad
-            : 1;
+        const accion = boton.dataset.accion;
 
-        if (boton.dataset.accion === 'sumar') {
-            carrito[index].cantidad = cantidadActual + 1;
-        } else if (boton.dataset.accion === 'restar') {
-            carrito[index].cantidad = Math.max(1, cantidadActual - 1);
-        } else if (boton.dataset.accion === 'eliminar') {
+        if (accion === 'sumar') {
+            carrito[index].cantidad = (carrito[index].cantidad || 1) + 1;
+        } else if (accion === 'restar') {
+            if (carrito[index].cantidad > 1) {
+                carrito[index].cantidad -= 1;
+            }
+        } else if (accion === 'eliminar') {
+            // Borramos el elemento del arreglo localmente
             carrito.splice(index, 1);
         }
 
-        guardarCarrito();
+        // Guardamos inmediatamente el nuevo estado en el navegador
+        localStorage.setItem("carritoEcoa", JSON.stringify(carrito));
+
+        // Volvemos a pintar el carrito actualizado en pantalla
         mostrarCarrito();
     });
 
@@ -175,7 +181,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            const tuNumeroWhatsApp = '573007431586'; 
+            const tuNumeroWhatsApp = '573007431586';
             let mensaje = '¡Hola, Ecoa! 🌿✨ Quiero hacer el siguiente pedido:\n\n';
 
             carritoActual.forEach((producto, index) => {

@@ -34,16 +34,16 @@ app.get('/', (req, res) => {
 
 // 3. IMPORTAR LOS MODELOS DE LA BASE DE DATOS
 
-const Usuario = require('./modelos/usuario');
-const Producto = require('./modelos/catalogo');
+const Usuario = require('./modelos/usuario.js');
+const Catalogo = require('./modelos/catalogo.js');
 
 //PARA CONECTAR LA BASE DE DATOS DE MONGO A CATALOGO EN VEZ DE HTML
-app.get('/api/productos', async (req, res) => {
+app.get('/api/catalogo', async (req, res) => {
     try {
-        const productos = await Producto.find();
+        const productos = await Catalogo.find();
         res.status(200).json(productos);
     } catch (error) {
-        res.status(500).json({ error: 'Error al obtener los productos' });
+        res.status(500).json({ error: 'Error al obtener el catalogo' });
     }
 });
 
@@ -89,8 +89,7 @@ app.post('/api/login', async (req, res) => {
     }
 });
 
-//para que mi pagina web lea los productos desde la base de datos
-const Catalogo = require('./models/catalogo');
+
 
 // Ruta para obtener los productos del catálogo en formato JSON
 app.get('/api/catalogo', async (req, res) => {
