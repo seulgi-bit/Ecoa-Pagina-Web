@@ -1,5 +1,5 @@
 // --- FUNCIONALIDAD DEL FORMULARIO DE CONTACTO A WHATSAPP ---
-const formContacto = document.getElementById("formulario contacto");
+const formContacto = document.getElementById("formulario-contacto");
 
 if (formContacto) {
   formContacto.addEventListener("submit", function (e) {
@@ -22,9 +22,9 @@ if (formContacto) {
     // 4. Armamos el mensaje ordenado para WhatsApp
     const textoMensaje = `¡Hola, Ecoa! 🌿✨\n\n` +
       `Me comunico desde la sección de Contacto:\n` +
-      `• *Nombre:* ${nombre}\n` +
-      `• *Correo:* ${email}\n` +
-      `• *Mensaje:* ${mensaje}`;
+      `- *Nombre:* ${nombre}\n` +
+      `- *Correo:* ${email}\n` +
+      `- *Mensaje:* ${mensaje}`;
 
     // 5. Para codificamos el texto para la URL
     const mensajeCodificado = encodeURIComponent(textoMensaje);
